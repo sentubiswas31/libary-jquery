@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Welcome</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- jQuery plugins -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+
+            <div id="wrapper">
+            <div id="query_box" class="panel">  
+                <form id="form_submit"><h4>Copy to process:</h4>
+                  <textarea id="place"></textarea>
+                  <input type="submit" value="Go" />
+  
+                </form>
+            </div>
+           <div id="results_box">Results will appear here</div>  
+           <ul class="dataList">
+              <li onclick="currentId()"> Current Id </li>
+           </ul>
+           <br><br><br>
+           <ul class="dataList">
+              <li></li>
+           </ul>
+        </div>
+      </div>
+    </div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+          
+      /*$.ajax({
+          type: 'GET',
+          url: "https://affiliate-api.flipkart.net/affiliate/1.0/booksApi/san2biswa.json",
+          dataType: "json",
+          xhrFields: {
+              withCredentials: false
+          },
+          headers: {
+              'Fk-Affiliate-Id ': 'san2biswa',
+              'Fk-Affiliate-Token': '2996c86044a74df18784c14c1981a04e',
+              'Content-Type': 'application/json'
+          },
+          success: function(data) {
+              for (i = 0; i < data.allOffersList.length; i++)
+              alert(data.allOffersList[i].title);
+              alert("Data load success: "+ JSON.stringify(data));
+          },
+          error: function(error){
+            alert("Data load fail: "+error);
+          }
+      });*/
+
+
+      //Data length 260 coming here. 
+      /*$.ajax({
+          type: 'GET',
+          url: "https://spreadsheets.google.com/feeds/list/0ApL1zT2P00q5dG1wOUMzSlNVV3VRV2pwQ2Fnbmt3M0E/od7/public/basic?alt=json",
+          dataType: "json",
+          success: function(data) {             
+              console.log("Data load success: ");
+              var dataLen = data.feed.entry.length;
+              console.log("Data length is: "+dataLen);
+          },
+          error: function(error){
+              console.log("Data load fail: "+error);
+          } 
+      });*/
+
+
+      //Data length not coming here.
+      $.ajax({
+          type: 'GET',
+          url: "http://phonegappro.esy.es/test/json.php", 
+          dataType: "json",
+          success: function(data) {
+              console.log("Data load success: ");
+              var dataLen = data.length;
+              console.log("Data length is: "+dataLen);
+              for (var i = 0; i < dataLen; i++) {
+                //Things[i]
+                var eachLi = "<li onclick='currentIdi("+i+")'>"+data[i].title+"</li>";
+                $(".dataList").append(eachLi);
+              }
+          },
+          error: function(error){
+              console.log("Data load fail: "+error);
+          }
+      });
+      
+});
+function currentIdi(e){
+    var curId =+ e+1;
+    alert("current Id: " +curId);
+  }
+</script>
+
+
+  </body>
+</html>

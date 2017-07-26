@@ -1,0 +1,125 @@
+<!doctype html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1, user-scalable=no" />
+<title>Welcome to our site</title>
+<link href="css/boilerplate.css" rel="stylesheet" type="text/css">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+<style>
+.tabname{
+	background: #ebebeb;
+	font: normal 13px/30px arial;
+}
+.tabname a{
+	float: left;
+	padding: 0 35px;
+	display: inline-block;
+	font: normal 13px/30px arial;
+	border-right: 1px solid #fff;
+	text-decoration: none;
+	outline: none;
+	color: #333;
+}
+.tabname a:hover{
+	background: #333;
+	color: #fff;
+}
+.tabCoontent{
+	padding: 15px;
+	border: 1px solid #ebebeb;
+	margin-top: 15px;
+}
+.content1{
+	padding: 15px;
+	min-height: 80px;
+	background: #f0f0f0;
+	margin-top: 10px;
+}
+</style>
+
+<script>
+$(document).ready(function(){
+	$(".tabname a").each(function(ind){		
+		//$(this).each(function(e){
+		$(this).click(function(){
+			//alert(ind);
+			$(".tabCoontent div").each(function(e){	
+				var divId = $(this).attr('id');
+				alert(divId);
+				if(e==ind){
+					//alert(e==ind);
+					//alert("Content");
+					/*$("#"+divId).css({
+						display: 'block'
+					});*/
+					$("#"+divId).slideDown();
+				}else{
+					$("#"+divId).css({
+						display: 'none'
+					});
+				}				
+			});
+		});	
+	     //console.log(e);
+		//});	
+	});	
+});
+</script>
+
+</head>
+<body>
+
+<div class="gridContainer clearfix">
+	<div class="tabname clearfix">
+		<a class="tab1" href="#"> Tab1 </a>
+		<a class="tab1" href="#"> Tab2 </a>
+		<a class="tab1" href="#"> Tab3 </a>
+		<a class="tab1" href="#"> Tab4 </a>
+		<a class="tab1" href="#"> Tab5 </a>
+		<a class="tab1" href="#"> Tab6 </a>
+	</div>
+	<div class="tabCoontent clearfix">
+		<div id="content1" class="content1"> 
+			This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. <br>
+		</div>
+		<div id="content2" class="content1" style="display:none;">
+			This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. <br>
+			This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+		</div>
+		<div id="content3" class="content1" style="display:none;"> 
+			This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. <br>
+			This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.<br>
+			This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+		</div>
+		<div id="content4" class="content1" style="display:none;"> 
+			This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. <br>
+			This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.<br>
+			This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.<br>
+			This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+		</div>
+		<div id="content5" class="content1" style="display:none;"> 
+			This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. <br>
+			This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.<br>
+			This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.<br>
+			This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.<br>
+			This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+		</div>
+		<div id="content6" class="content1" style="display:none;"> 
+			
+			This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. <br>
+			This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.<br>
+			This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.<br>
+			This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.<br>
+			This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.<br>
+			This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+			
+		</div>		
+	</div>
+</div>
+
+
+</body>
+</html>

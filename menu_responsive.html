@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<!--Created using jsbin.com
+  Source can be edited via http://jsbin.com/ejiseg/2/edit -->
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+<script src="js/jquery.js"></script>
+<meta charset="utf-8">
+<title>Welcome</title>
+
+<style>	
+ .container{
+	width: 750px;
+	margin: 0 auto;
+	border: 1px solid #eee;
+	padding: 15px;
+ }
+ #popup{
+	display: table-cell;
+ }
+/*style the main menu*/ 
+.myMenu { margin:0; padding:0;} 
+.myMenu li { list-style:none; float:left; font:12px Arial, Helvetica, sans-serif #111; } 
+.myMenu li a:link, .myMenu li a:visited { display:block; text-decoration:none; background-color:#09F; padding: 0.5em 2em; margin:0; border-right: 1px solid #fff; color:#111; } 
+.myMenu li a:hover { background-color:#0CF; } 
+
+@media (max-width: 767px){
+.container{
+	width: 90%;
+.myMenu{
+	width: 100%;
+}
+.myMenu li{
+	background:#f00;
+	display: block;
+	float: none;
+	width: 100%;
+	border-bottom: 1px solid #fff;	
+}
+.myMenu li a:link, .myMenu li a:visited{
+	border-bottom: 1px solid #fff;
+}
+}
+</style>
+
+</head>
+<body>
+<div class="container">
+	
+<a href="javascript:void(0)" id="settings" onclick="slideMenu()"  style="display:none;">Settings</a>
+<div id="popup">
+	<ul class="myMenu">		
+		<li><a href="#">menu item 1</a></li>
+		<li><a href="#">menu item 4</a></li> 
+		<li><a href="#">menu item 5</a></li>
+		<li><a href="#">menu item 6</a></li> 
+		<li><a href="#">menu item 7</a></li> 		
+	</ul>
+</div>
+<p>
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+</div>
+
+<script>
+$("document").ready(function() {
+	//alert("dfasd");
+
+    var currentSize = $(window).width();
+	
+	
+	function topMenu() {
+		var currentSize = $(window).width();
+		if(currentSize >767){
+			$("#settings").css({display: 'none'});
+			$(".myMenu li").css({float: 'left'});
+			$(".myMenu").css({display: 'block'});
+		}else if(currentSize <=767){
+			$("#settings").css({display: 'block'});
+			$(".myMenu li").css({display: 'block', float: 'none'});
+			$(".myMenu").css({display: 'none'});			
+		}
+	}	
+	topMenu();
+
+	$(window).resize(function() {
+		topMenu();
+	});
+	$("#settings").on("click", function(){
+		//alert("Hello");
+		$(".myMenu").slideToggle();
+		console.log($(".myMenu").slideToggle());
+	})	
+});
+</script>
+
+</body>
+</html>

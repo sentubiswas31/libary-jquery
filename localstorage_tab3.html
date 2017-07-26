@@ -1,0 +1,62 @@
+<!doctype html>
+<html class="">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1, user-scalable=no" />
+<title>Welcome to our site</title>
+<script src="js/jquery-1.11.3.min.js"></script>
+
+<style>
+.gridContainer{
+  width: 860px;
+  height: auto;
+  margin: 0 auto;
+}
+.clearfix{*zoom:1;}
+.clearfix:before, .clearfix:after{display: table; content: ""; line-height: 0px; height: 0px;}
+.clearfix:after{ clear: both; }
+
+.row1{
+  display: block;
+}
+#LayoutDiv1 .product1{
+  float: left;
+}
+.show_img{
+  display: block;
+}
+</style>
+
+
+<script>
+$(document).ready(function() {
+	$('.product1 img').each(function(){
+		$($(this)).click(function(){
+			//alert("Handler for .click() called."+$(this).attr('id'));
+			$('.product_big').html('<img src="images/'+$(this).attr('id')+'" alt="" height="300">');
+		});
+	});
+	
+});
+</script>
+
+</head>
+<body>
+
+<div class="gridContainer clearfix">
+  <div class="header">Header</div>
+    <div id="LayoutDiv1">
+        <div class="body clearfix">
+          <div class="row1 clearfix">
+            <div class="product1"><img id="product_01.png" src="images/product_01.png" alt=""></div>
+            <div class="product1"><img id="product_02.png" src="images/product_02.png" alt=""></div>
+            <div class="product1"><img id="product_03.png" src="images/product_03.png" alt=""></div>
+          </div>
+        </div>
+  </div>
+<div>&nbsp;</div>
+  <div class="product_big" style="border:1px solid red; height:300px;">&nbsp;</div> 
+</div>
+
+</body>
+</html>

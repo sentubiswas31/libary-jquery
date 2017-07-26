@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Welcome</title>
+
+<script src="js/jquery.js"></script>
+
+
+<script type="text/javascript" language="javascript">
+$.ajax({
+	url : 'http://phonegappro.esy.es/test/json.php',
+	type : 'GET',
+	//contentType : 'JSON',
+	success : function(data){
+		//var getData = data[0].title;
+		var getData = $.parseJSON(data);
+        var eachLi = "";
+		for (var i = 0; i < getData.length; i++) {
+			//Things[i]
+			//alert("success");
+			//alert(i);
+			
+			eachLi += "<div style='border: 1px solid red;'>"+
+				"<p>" +getData[i].id+ "</p>"+
+				"<p>" +getData[i].title+ "</p>"+
+				"<p>" +getData[i].duration+ "</p>"+
+				"<p>" +getData[i].price+ "</p>"+
+			"</div>";
+			//var eachLi += "<li>"+getData[i].title+"</li>";
+			$(".gamesList").html(eachLi);
+		};
+	}, 
+	error : function(error){
+		alert("error" + error);
+	}
+});
+</script>
+
+</head>
+
+<body>
+
+<div id="result">
+  <ul class="gamesList">
+
+  </ul>
+</div>   
+
+</body>
+</html>

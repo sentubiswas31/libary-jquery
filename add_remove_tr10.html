@@ -1,0 +1,94 @@
+<html>
+	<head>
+		<title> Welcome </title>
+		<script src="js/jquery-2.1.4.min.js"></script>		
+	</head>	
+	<body>
+	<table id="formTable" width="750" align="center" border="1">
+		<thead>
+			<tr>
+				<th align="left">Name </th>
+				<th align="left">Email </th>
+				<th align="left">Phone </th>
+				<th align="left">Address </th>
+				<th align="center">Action</th>
+			</tr>
+		</thead>
+		<tbody id="formAreaT">
+			<tr id="formArea">
+				<td><input type="text" id="Name" value="" /></td>
+				<td><input type="text" id="Email" value="" /></td>
+				<td><input type="text" id="Phone" value="" /></td>
+				<td><input type="text" id="Address" value="" /></td>
+				<td><input type="button" class="addBtn" value="Add" /></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$(".addBtn").on("click", function(){
+			//alert("addBtn");
+			var tbStr = "";
+			tbStr = 
+				'<tr id="formArea">'+
+				'<td>'+$("#Name").val()+'</td>'+
+				'<td>'+$("#Email").val()+'</td>'+
+				'<td>'+$("#Phone").val()+'</td>'+
+				'<td>'+$("#Address").val()+'</td>'+
+				'<td><button id="delete"> Delete </button></td>'+
+			'</tr>';
+
+
+			content += 
+                "<tr>"+
+                    "<td>"+
+                        "Scaffolding required"+
+                        "<div>"+ 
+                        "<i class='fa fa-long-arrow-right' aria-hidden='true'></i>"+ 
+                        "<strong>Good</strong>"+ 
+                        "</div>"+
+                    "</td>"+
+                    "<td>"+value.es_value+"</td>"+
+                "</tr>"+
+                "<tr>"+
+                    "<td>Jet washer used</td>"+
+                    "<td>"+value.es_value+"</td>"+
+                "</tr>"+
+
+                "<tr>"+
+                    "<td>Airless Sprayer used</td>"+
+                    "<td>"+value.es_value+"</td>"+
+                "</tr>"+
+                "<tr>"+
+                    "<td>Paint Scraper used</td>"+
+                    "<td>Yes</td>"+
+                "</tr>"+
+                "<tr>"+
+                    "<td>Exterior Primer used</td>"+
+                    "<td>"+value.es_value+"</td>"+
+                "</tr>"+
+                "<tr>"+
+                    "<td>Emulsion used</td>"+
+                    "<td>"+value.es_value+"</td>"+
+                "</tr>"+
+
+
+			$("#Name").val("");
+			$("#Email").val("");
+			$("#Phone").val("");
+			$("#Address").val("");
+
+			$("#formAreaT").append(tbStr);
+		});
+
+		$("#formTable").on("click", "#delete", function(){
+			//alert("asd");
+			$(this).parents("tr").remove();
+		});
+		
+	});				
+	</script>
+
+	</body>
+</html>

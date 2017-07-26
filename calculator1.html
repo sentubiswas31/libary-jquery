@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width-device-width, minimum-scale=1.0; maximum-scale=1.0"/>
+<title>Welcome</title>
+<script src="jquery.js"></script>
+<style>
+.highlight{
+	background: #f00;
+}
+</style>
+</head>
+<body>
+
+<script>
+
+function getTotal(){
+//var y = parseInt(document.getElementById("txt1").value);
+
+var sum;
+var num1 = parseInt(document.getElementById("t1").value);
+var num2 = parseInt(document.getElementById("t2").value);
+sum = +num1 + +num2;
+alert(sum);
+//document.getElementById('t3').value = sum;
+document.getElementById("t3").value = sum;
+
+}
+</script>  
+  
+<div>
+
+<table border="0" cellpadding="5" cellspacing="0" width="750" align="center">
+<tr>
+	<td>Enter 1st Number</td>
+	<td><input type="text" name="t1" id="t1" /></td>
+</tr>
+<tr>
+	<td>Enter 2nd Number</td>
+	<td><input type="text" name="t2" id="t2" /></td>
+</tr
+<tr>
+	<td>Total amount is:</td>
+	<td><input type="text" name="t3" id="t3" /></td>
+</tr>
+<tr>  
+	<td>&nbsp;</td>
+	<td><input onclick="getTotal()" type="button" value="Get Total" name="b1" id="b1" /></td>
+</tr>
+</table>
+
+<div class="list">
+    <!--ul id="city" class="city">
+		 
+    </ul-->
+</div>
+
+<!--ul class="nameList">
+	<li onClick="addBlack()">Name1</li>
+	<li>Name2</li>
+	<li>Name3</li>		
+</ul-->
+	
+</body>
+</html>

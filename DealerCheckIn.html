@@ -1,0 +1,631 @@
+	<div id="checkinDealerList" data-role="page">
+		<div data-role="header" data-position="fixed">
+			<img src="img/logo.gif" class="ui-btn-left" style="height: 2.4em" />
+			<h3 style="white-space: normal !important"  class="headerChild">
+               </h3>
+			<a class="ui-btn-right ui-btn ui-btn-inline ui-btn-icon-notext ui-corner-all ui-icon-grid corner-nav-but" data-theme="c">
+			</a>
+
+		</div>
+
+		<div class="ui-content" role="main">
+			<ul data-role="listview" class="ui-mini" data-inset="true"
+				data-theme="b">
+				<li data-role="list-divider"
+					style="text-align: center; white-space: normal !important"><span>Dealer Position Registration</span></li>
+			</ul>
+			 <ul id="lvDealerList" data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Search Dealers..."></ul>
+        
+		</div>
+	</div>
+
+	<div id="dlr-visit-online-list" data-role="page">
+		<div data-role="header" data-position="fixed">
+			<img src="img/logo.gif" class="ui-btn-left" style="height: 2.4em" />
+			<h3 style="white-space: normal !important"  class="headerChild">
+			</h3>
+			<a class="ui-btn-right ui-btn ui-btn-inline ui-btn-icon-notext ui-corner-all ui-icon-grid corner-nav-but" data-theme="c">
+			</a>
+		</div>
+		<div class="ui-content" role="main">
+			<ul data-role="listview" class="ui-mini" data-inset="true"
+				data-theme="b">
+				<li data-role="list-divider"
+					style="text-align: center; white-space: normal !important"><span>Delaer Visit Purpose</span></li>
+			</ul>
+			<ul id="lv-dlr-list" data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Search Dealers..."></ul>
+		</div>
+	</div>
+
+	<div id="dlr-visit-online-dtl" data-role="page">
+		<div data-role="header" data-position="fixed">
+			<img src="img/logo.gif" class="ui-btn-left" style="height: 2.4em" />
+			<h3 style="white-space: normal !important"  class="headerChild">
+			</h3>
+			<a class="ui-btn-right ui-btn ui-btn-inline ui-btn-icon-notext ui-corner-all ui-icon-grid corner-nav-but" data-theme="c">
+			</a>
+		</div>
+		<div class="ui-content" role="main">
+			<ul data-role="listview" class="ui-mini" data-inset="true"
+				data-theme="b">
+				<li data-role="list-divider"
+					style="text-align: center; white-space: normal !important">
+					<span>Delaer Visit Purpose</span><br />
+					<span id ='span-dlr-visit-online-hdr'></span>
+
+				</li>
+			</ul>
+			<div id="frm-chk-activity-list"></div>
+			<input id="txt-online-activity-oth" type="text" placeholder="Other Activity"/>
+			<button class="ui-shadow ui-btn ui-corner-all" type="submit" id="btn-online-visit-submit">Submit</button>
+		</div>
+	</div>
+
+	<div id="dlr-visit-offline-select" data-role="page">
+		<div data-role="header" data-position="fixed">
+			<img src="img/logo.gif" class="ui-btn-left" style="height: 2.4em" />
+			<h3 style="white-space: normal !important"  class="headerChild">
+			</h3>
+			<a href="#popupMenu" data-rel="popup" data-transition="slideup" data-position-to="window" class="ui-btn-right ui-btn ui-btn-inline ui-btn-icon-notext ui-corner-all ui-icon-grid  corner-nav-but" data-theme="c">
+			</a>
+
+		</div>
+
+		<div class="ui-content" role="main">
+			<ul data-role="listview" class="ui-mini ui-listview ui-listview-inset ui-corner-all ui-shadow ui-group-theme-b" data-inset="true" data-theme="b">
+				<li data-role="list-divider" style="text-align: center; white-space: normal !important" role="heading" class="ui-li-divider ui-bar-b ui-first-child ui-last-child">
+					<span>OFFLINE VISIT PURPOSE</span>
+				</li>
+			</ul>
+			<label for="ddlDepot"><b>Select Depot</b></label>
+			<select name="ddlDepot" id="ddlDepot" data-mini="true" data-theme='d'></select>
+
+			<label for="ddlTerr"><b>Select Territory</b></label>
+			<select name="ddlTerr" id="ddlTerr" data-mini="true"  data-theme='d'></select>
+
+			<label for="ddlDate"><b>Select Date</b></label>
+			<select name="ddlDate" id="ddlDate" data-mini="true"  data-theme='d'></select>
+
+			<label id="lblDealer" style="font-size:smaller;white-space: normal !important;font-bold:true;"></label>
+			<ul id="lvDealer" data-role="listview" data-mini="true" data-inset="true" data-filter="true" data-filter-placeholder="Find a Dealer..." data-filter-theme="a" ></ul>
+
+			<label for="fromHr"><b>From Time</b></label>
+			<select id="fromHr" data-inline="true" data-mini="true" >
+				<option value="" selected>HH</option>
+				<option value="00">00</option>
+				<option value="01">01</option>
+				<option value="02">02</option>
+				<option value="03">03</option>
+				<option value="04">04</option>
+				<option value="05">05</option>
+				<option value="06">06</option>
+				<option value="07">07</option>
+				<option value="08">08</option>
+				<option value="09">09</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+				<option value="13">13</option>
+				<option value="14">14</option>
+				<option value="15">15</option>
+				<option value="16">16</option>
+				<option value="17">17</option>
+				<option value="18">18</option>
+				<option value="19">19</option>
+				<option value="20">20</option>
+				<option value="21">21</option>
+				<option value="22">22</option>
+				<option value="23">23</option>
+			</select>
+
+			<select id="fromMin" data-inline="true"  data-mini="true" >
+				<option value="" selected>MM</option>
+				<option value='00'>00</option>
+				<option value='01'>01</option>
+				<option value='02'>02</option>
+				<option value='03'>03</option>
+				<option value='04'>04</option>
+				<option value='05'>05</option>
+				<option value='06'>06</option>
+				<option value='07'>07</option>
+				<option value='08'>08</option>
+				<option value='09'>09</option>
+				<option value='10'>10</option>
+				<option value='11'>11</option>
+				<option value='12'>12</option>
+				<option value='13'>13</option>
+				<option value='14'>14</option>
+				<option value='15'>15</option>
+				<option value='16'>16</option>
+				<option value='17'>17</option>
+				<option value='18'>18</option>
+				<option value='19'>19</option>
+				<option value='20'>20</option>
+				<option value='21'>21</option>
+				<option value='22'>22</option>
+				<option value='23'>23</option>
+				<option value='24'>24</option>
+				<option value='25'>25</option>
+				<option value='26'>26</option>
+				<option value='27'>27</option>
+				<option value='28'>28</option>
+				<option value='29'>29</option>
+				<option value='30'>30</option>
+				<option value='31'>31</option>
+				<option value='32'>32</option>
+				<option value='33'>33</option>
+				<option value='34'>34</option>
+				<option value='35'>35</option>
+				<option value='36'>36</option>
+				<option value='37'>37</option>
+				<option value='38'>38</option>
+				<option value='39'>39</option>
+				<option value='40'>40</option>
+				<option value='41'>41</option>
+				<option value='42'>42</option>
+				<option value='43'>43</option>
+				<option value='44'>44</option>
+				<option value='45'>45</option>
+				<option value='46'>46</option>
+				<option value='47'>47</option>
+				<option value='48'>48</option>
+				<option value='49'>49</option>
+				<option value='50'>50</option>
+				<option value='51'>51</option>
+				<option value='52'>52</option>
+				<option value='53'>53</option>
+				<option value='54'>54</option>
+				<option value='55'>55</option>
+				<option value='56'>56</option>
+				<option value='57'>57</option>
+				<option value='58'>58</option>
+				<option value='59'>59</option>
+			</select>
+
+			<label for="toHr"><b>To Time</b></label>
+			<select id="toHr" data-inline="true" data-mini="true" >
+				<option value="" selected>HH</option>
+				<option value="00">00</option>
+				<option value="01">01</option>
+				<option value="02">02</option>
+				<option value="03">03</option>
+				<option value="04">04</option>
+				<option value="05">05</option>
+				<option value="06">06</option>
+				<option value="07">07</option>
+				<option value="08">08</option>
+				<option value="09">09</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+				<option value="13">13</option>
+				<option value="14">14</option>
+				<option value="15">15</option>
+				<option value="16">16</option>
+				<option value="17">17</option>
+				<option value="18">18</option>
+				<option value="19">19</option>
+				<option value="20">20</option>
+				<option value="21">21</option>
+				<option value="22">22</option>
+				<option value="23">23</option>
+			</select>
+
+			<select id="toMin" data-inline="true" data-mini="true" >
+				<option value="" selected>MM</option>
+				<option value='00'>00</option>
+				<option value='01'>01</option>
+				<option value='02'>02</option>
+				<option value='03'>03</option>
+				<option value='04'>04</option>
+				<option value='05'>05</option>
+				<option value='06'>06</option>
+				<option value='07'>07</option>
+				<option value='08'>08</option>
+				<option value='09'>09</option>
+				<option value='10'>10</option>
+				<option value='11'>11</option>
+				<option value='12'>12</option>
+				<option value='13'>13</option>
+				<option value='14'>14</option>
+				<option value='15'>15</option>
+				<option value='16'>16</option>
+				<option value='17'>17</option>
+				<option value='18'>18</option>
+				<option value='19'>19</option>
+				<option value='20'>20</option>
+				<option value='21'>21</option>
+				<option value='22'>22</option>
+				<option value='23'>23</option>
+				<option value='24'>24</option>
+				<option value='25'>25</option>
+				<option value='26'>26</option>
+				<option value='27'>27</option>
+				<option value='28'>28</option>
+				<option value='29'>29</option>
+				<option value='30'>30</option>
+				<option value='31'>31</option>
+				<option value='32'>32</option>
+				<option value='33'>33</option>
+				<option value='34'>34</option>
+				<option value='35'>35</option>
+				<option value='36'>36</option>
+				<option value='37'>37</option>
+				<option value='38'>38</option>
+				<option value='39'>39</option>
+				<option value='40'>40</option>
+				<option value='41'>41</option>
+				<option value='42'>42</option>
+				<option value='43'>43</option>
+				<option value='44'>44</option>
+				<option value='45'>45</option>
+				<option value='46'>46</option>
+				<option value='47'>47</option>
+				<option value='48'>48</option>
+				<option value='49'>49</option>
+				<option value='50'>50</option>
+				<option value='51'>51</option>
+				<option value='52'>52</option>
+				<option value='53'>53</option>
+				<option value='54'>54</option>
+				<option value='55'>55</option>
+				<option value='56'>56</option>
+				<option value='57'>57</option>
+				<option value='58'>58</option>
+				<option value='59'>59</option>
+			</select>
+
+			<label for="frm-chk-activity-list-offline"><b>Select Purpose</b></label>
+			<div id="frm-chk-activity-list-offline"></div>
+
+			<input id="activityOther" type="text" placeholder="Other Activity"/>
+			<button class="ui-shadow ui-btn ui-corner-all" type="submit" id="btnActivitySubmit">Submit</button>
+
+		</div>
+	</div>
+
+	<div id="dlr-visit-backlog-select" data-role="page">
+		<div data-role="header" data-position="fixed">
+			<img src="img/logo.gif" class="ui-btn-left" style="height: 2.4em" />
+			<h3 style="white-space: normal !important"  class="headerChild">
+			</h3>
+			<a href="#popupMenu" data-rel="popup" data-transition="slideup" data-position-to="window" class="ui-btn-right ui-btn ui-btn-inline ui-btn-icon-notext ui-corner-all ui-icon-grid  corner-nav-but" data-theme="c">
+			</a>
+
+		</div>
+		<div class="ui-content" data-role="main">
+			<ul data-role="listview" class="ui-mini" data-inset="true"
+				data-theme="b">
+				<li data-role="list-divider"
+					style="text-align: center; white-space: normal !important"><span>Select Dealer</span></li>
+			</ul>
+			<ul id="lv-dlr-visit-backlog-dlr-list" data-role="listview" data-inset="true" data-divider-theme="a"> </ul>
+		</div>
+	</div>
+
+	<div id="dlr-visit-backlog-dtl" data-role="page">
+		<div data-role="header" data-position="fixed">
+			<img src="img/logo.gif" class="ui-btn-left" style="height: 2.4em" />
+			<h3 style="white-space: normal !important"  class="headerChild">
+			</h3>
+			<a href="#popupMenu" data-rel="popup" data-transition="slideup" data-position-to="window" class="ui-btn-right ui-btn ui-btn-inline ui-btn-icon-notext ui-corner-all ui-icon-grid  corner-nav-but" data-theme="c">
+			</a>
+
+		</div>
+		<div class="ui-content" data-role="main">
+			<ul data-role="listview" class="ui-mini" data-inset="true"	data-theme="b">
+				<li data-role="list-divider"
+					style="text-align: center; white-space: normal !important"><span>Select Visit Purpose</span><br/>
+					<span id="span-dlr-visit-backlog-dtl-hdr"></span></li>
+			</ul>
+
+			<label for="frm-chk-activity-list-backlog"><b>Select Purpose</b></label>
+			<div id="frm-chk-activity-list-backlog"></div>
+
+			<input id="txt-backlog-activity-oth" type="text" placeholder="Other Activity"/>
+
+			<label for="ddl-start-hh-backlog"><b>Start Time</b></label>
+			<select id="ddl-start-hh-backlog" data-inline="true">
+				<option value="" selected>HH</option>
+				<option value="00">00</option>
+				<option value="01">01</option>
+				<option value="02">02</option>
+				<option value="03">03</option>
+				<option value="04">04</option>
+				<option value="05">05</option>
+				<option value="06">06</option>
+				<option value="07">07</option>
+				<option value="08">08</option>
+				<option value="09">09</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+				<option value="13">13</option>
+				<option value="14">14</option>
+				<option value="15">15</option>
+				<option value="16">16</option>
+				<option value="17">17</option>
+				<option value="18">18</option>
+				<option value="19">19</option>
+				<option value="20">20</option>
+				<option value="21">21</option>
+				<option value="22">22</option>
+				<option value="23">23</option>
+			</select>
+
+			<select id="ddl-start-mm-backlog" data-inline="true">
+				<option value="" selected>MM</option>
+				<option value='00'>00</option>
+				<option value='01'>01</option>
+				<option value='02'>02</option>
+				<option value='03'>03</option>
+				<option value='04'>04</option>
+				<option value='05'>05</option>
+				<option value='06'>06</option>
+				<option value='07'>07</option>
+				<option value='08'>08</option>
+				<option value='09'>09</option>
+				<option value='10'>10</option>
+				<option value='11'>11</option>
+				<option value='12'>12</option>
+				<option value='13'>13</option>
+				<option value='14'>14</option>
+				<option value='15'>15</option>
+				<option value='16'>16</option>
+				<option value='17'>17</option>
+				<option value='18'>18</option>
+				<option value='19'>19</option>
+				<option value='20'>20</option>
+				<option value='21'>21</option>
+				<option value='22'>22</option>
+				<option value='23'>23</option>
+				<option value='24'>24</option>
+				<option value='25'>25</option>
+				<option value='26'>26</option>
+				<option value='27'>27</option>
+				<option value='28'>28</option>
+				<option value='29'>29</option>
+				<option value='30'>30</option>
+				<option value='31'>31</option>
+				<option value='32'>32</option>
+				<option value='33'>33</option>
+				<option value='34'>34</option>
+				<option value='35'>35</option>
+				<option value='36'>36</option>
+				<option value='37'>37</option>
+				<option value='38'>38</option>
+				<option value='39'>39</option>
+				<option value='40'>40</option>
+				<option value='41'>41</option>
+				<option value='42'>42</option>
+				<option value='43'>43</option>
+				<option value='44'>44</option>
+				<option value='45'>45</option>
+				<option value='46'>46</option>
+				<option value='47'>47</option>
+				<option value='48'>48</option>
+				<option value='49'>49</option>
+				<option value='50'>50</option>
+				<option value='51'>51</option>
+				<option value='52'>52</option>
+				<option value='53'>53</option>
+				<option value='54'>54</option>
+				<option value='55'>55</option>
+				<option value='56'>56</option>
+				<option value='57'>57</option>
+				<option value='58'>58</option>
+				<option value='59'>59</option>
+			</select>
+
+			<label for="ddl-end-hh-backlog"><b>End Time</b></label>
+			<select id="ddl-end-hh-backlog" data-inline="true">
+				<option value="" selected>HH</option>
+				<option value="00">00</option>
+				<option value="01">01</option>
+				<option value="02">02</option>
+				<option value="03">03</option>
+				<option value="04">04</option>
+				<option value="05">05</option>
+				<option value="06">06</option>
+				<option value="07">07</option>
+				<option value="08">08</option>
+				<option value="09">09</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+				<option value="13">13</option>
+				<option value="14">14</option>
+				<option value="15">15</option>
+				<option value="16">16</option>
+				<option value="17">17</option>
+				<option value="18">18</option>
+				<option value="19">19</option>
+				<option value="20">20</option>
+				<option value="21">21</option>
+				<option value="22">22</option>
+				<option value="23">23</option>
+			</select>
+
+			<select id="ddl-end-mm-backlog" data-inline="true">
+				<option value="" selected>MM</option>
+				<option value='00'>00</option>
+				<option value='01'>01</option>
+				<option value='02'>02</option>
+				<option value='03'>03</option>
+				<option value='04'>04</option>
+				<option value='05'>05</option>
+				<option value='06'>06</option>
+				<option value='07'>07</option>
+				<option value='08'>08</option>
+				<option value='09'>09</option>
+				<option value='10'>10</option>
+				<option value='11'>11</option>
+				<option value='12'>12</option>
+				<option value='13'>13</option>
+				<option value='14'>14</option>
+				<option value='15'>15</option>
+				<option value='16'>16</option>
+				<option value='17'>17</option>
+				<option value='18'>18</option>
+				<option value='19'>19</option>
+				<option value='20'>20</option>
+				<option value='21'>21</option>
+				<option value='22'>22</option>
+				<option value='23'>23</option>
+				<option value='24'>24</option>
+				<option value='25'>25</option>
+				<option value='26'>26</option>
+				<option value='27'>27</option>
+				<option value='28'>28</option>
+				<option value='29'>29</option>
+				<option value='30'>30</option>
+				<option value='31'>31</option>
+				<option value='32'>32</option>
+				<option value='33'>33</option>
+				<option value='34'>34</option>
+				<option value='35'>35</option>
+				<option value='36'>36</option>
+				<option value='37'>37</option>
+				<option value='38'>38</option>
+				<option value='39'>39</option>
+				<option value='40'>40</option>
+				<option value='41'>41</option>
+				<option value='42'>42</option>
+				<option value='43'>43</option>
+				<option value='44'>44</option>
+				<option value='45'>45</option>
+				<option value='46'>46</option>
+				<option value='47'>47</option>
+				<option value='48'>48</option>
+				<option value='49'>49</option>
+				<option value='50'>50</option>
+				<option value='51'>51</option>
+				<option value='52'>52</option>
+				<option value='53'>53</option>
+				<option value='54'>54</option>
+				<option value='55'>55</option>
+				<option value='56'>56</option>
+				<option value='57'>57</option>
+				<option value='58'>58</option>
+				<option value='59'>59</option>
+			</select>
+
+			<button class="ui-shadow ui-btn ui-corner-all" type="submit" id="btn-activity-submit-backlog">Submit</button>
+
+		</div>
+	</div>
+
+	<div id="dlr-visit-history" data-role="page">
+		<div data-role="header" data-position="fixed">
+			<img src="img/logo.gif" class="ui-btn-left" style="height: 2.4em" />
+			<h3 style="white-space: normal !important"  class="headerChild">
+			</h3>
+			<a href="#popupMenu" data-rel="popup" data-transition="slideup" data-position-to="window" class="ui-btn-right ui-btn ui-btn-inline ui-btn-icon-notext ui-corner-all ui-icon-grid corner-nav-but" data-theme="c">
+			</a>
+		</div>
+
+		<div class="ui-content" role="main">
+			<ul data-role="listview" class="ui-mini" data-inset="true"
+				data-theme="b">
+				<li data-role="list-divider"
+					style="text-align: center; white-space: normal !important"><span>Dealer History List</span></li>
+			</ul>
+			<div id="datepicker-dlr-visit-history"> </div>
+			<p class="errotTxt">Dealers marked in Red, will not be considered in TSR unless Time Spent is updated.</p>
+			<ul id="lv-dlr-visit-history-list" data-role="listview" data-inset="true">
+			</ul>
+		</div>
+	</div>
+
+	<div id="dlr-re-registration-list" data-role="page">
+		<div data-role="header" data-position="fixed">
+			<img src="img/logo.gif" class="ui-btn-left" style="height: 2.4em" />
+			<h3 style="white-space: normal !important"  class="headerChild">
+			</h3>
+			<a class="ui-btn-right ui-btn ui-btn-inline ui-btn-icon-notext ui-corner-all ui-icon-grid corner-nav-but" data-theme="c">
+			</a>
+		</div>
+		<div class="ui-content" role="main">
+			<ul data-role="listview" class="ui-mini" data-inset="true"
+				data-theme="b">
+				<li data-role="list-divider"
+					style="text-align: center; white-space: normal !important"><span>Delaer Position Re-Registration</span></li>
+			</ul>
+			<ul id="lv-dlr-re-registration-list" data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Search Dealers..."></ul>
+		</div>
+	</div>
+
+	<div id="dlr-re-registration-dtl" data-role="page">
+		<div data-role="header" data-position="fixed">
+			<img src="img/logo.gif" class="ui-btn-left" style="height: 2.4em" />
+			<h3 style="white-space: normal !important"  class="headerChild">
+			</h3>
+			<a class="ui-btn-right ui-btn ui-btn-inline ui-btn-icon-notext ui-corner-all ui-icon-grid corner-nav-but" data-theme="c">
+			</a>
+		</div>
+		<div class="ui-content" role="main">
+			<ul data-role="listview" class="ui-mini" data-inset="true"
+				data-theme="b">
+				<li data-role="list-divider"
+					style="text-align: center; white-space: normal !important"><span>Delaer Position Re-Registration</span></li>
+			</ul>
+			<div id="map-dlr-re-registration" style="width: 100%; height: 350px;"></div>
+			<button class="ui-shadow ui-btn ui-corner-all" type="submit" id="btn-dlr-re-registration-submit" data-mini="true">Re-Register</button>
+		</div>
+	</div>
+
+	<div id="dlr-depot-pos-registration" data-role="page">
+		<div data-role="header" data-position="fixed">
+			<img src="img/logo.gif" class="ui-btn-left" style="height: 2.4em" />
+			<h3 style="white-space: normal !important"  class="headerChild">
+			</h3>
+			<a class="ui-btn-right ui-btn ui-btn-inline ui-btn-icon-notext ui-corner-all ui-icon-grid corner-nav-but" data-theme="c">
+			</a>
+
+		</div>
+
+		<div class="ui-content" role="main">
+			<ul data-role="listview" class="ui-mini" data-inset="true"
+				data-theme="b">
+				<li data-role="list-divider"
+					style="text-align: center; white-space: normal !important"><span>Depot Position Registration</span></li>
+			</ul>
+			<ul id="lvDepotList" data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Search Depot...">
+			</ul>
+		</div>
+	</div>
+
+
+
+	<div id="pageSubmenu" data-role="page" class="homeBg2">
+		<div data-role="header" data-position="fixed">
+			<img src="img/logo.gif" class="ui-btn-left" style="height: 2.4em" />
+			<h3 style="white-space: normal !important"  class="headerChild">
+			</h3>
+			<a class="ui-btn-right ui-btn ui-btn-inline ui-btn-icon-notext ui-corner-all ui-icon-grid corner-nav-but" data-theme="c">
+			</a>
+		</div>
+		<div role="main" class="ui-content">
+			<div class="heading">
+				<a href="#" id="notify" class="ui-btn-right notifications_off ui-btn ui-shadow ui-corner-all"
+				   style="background-color: transparent; border: 0px; box-shadow: none; margin:58px 15px 0 0;display: none;"
+				   onclick="window.location='./action.html#notifications';">
+				</a>
+				<span>SubMenu Page</span>
+			</div>
+			<ul id="subMenuList" class="subMenuList">
+				<li id="liSubMenu1"><span></span><b>Lorem ipsum dolor sit amet</b></li>
+				<li id="liSubMenu2"><span></span><b>Consectetuer adipiscing elit</b></li>
+				<li id="liSubMenu3"><span></span><b>Sed diam nonummy nibh euismod</b></li>
+				<li id="liSubMenu4"><span></span><b>Tincidunt ut laoreet dolore</b></li>
+				<li id="liSubMenu5"><span></span><b>Magna aliquam erat volutpat</b></li>
+				<li id="liSubMenu6"><span></span><b>Wisi enim ad minim veniam</b></li>
+				<li id="liSubMenu7"><span></span><b>Nostrud exerci tation ullamcorper</b></li>
+				<li id="liSubMenu8"><span></span><b>Suscipit lobortis nisl ut </b></li>
+				<li id="liSubMenu9"><span></span><b>Aliquip ex ea commodo consequat</b></li>
+			</ul>
+		</div>
+		<!--div class="selectMenu">
+			<div class="iconlist" id="btn-menu-toggle"></div>
+		</div-->
+	</div>

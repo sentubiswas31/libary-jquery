@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Welcome</title>
+<script src="js/jquery.js"></script>
+
+<style>
+.rate_widget {
+    position: relative;
+    width: 500px;
+    height: 15px;
+	margin: 0 auto;
+}
+.ratings_stars {
+    background: #eee;
+    float: left;    
+    margin-right: 2px;
+    width: 60px;
+	height: 15px;
+	cursor: pointer;
+}
+.ratings_vote {
+    background: #f00;
+}
+.ratings_over {
+    background: #ccc;
+}
+
+</style>
+
+<script>
+$(document).ready(function (){
+
+/*
+$('.ratings_stars').hover(
+	function(){
+		$(this).prevAll().andSelf().addClass('ratings_over');
+		$(this).nextAll().removeClass('ratings_over');	
+	}
+);
+*/
+
+$('.ratings_stars').bind('mouseover', function(){
+		//alert(JSON.stringify(val));
+		$(this).prevAll().andSelf().addClass('ratings_over');		
+	}
+);
+$('.ratings_stars').bind('mouseout', function(){
+		//alert(JSON.stringify(val));
+		$(this).nextAll().andSelf().removeClass('ratings_over');		
+	}
+);
+
+/*
+$('.ratings_stars').hover(
+    Handles the mouseover
+    function() {
+        $(this).prevAll().andSelf().addClass('ratings_over');
+        $(this).nextAll().removeClass('ratings_vote');
+    },
+     Handles the mouseout
+    function() {
+        $(this).prevAll().andSelf().removeClass('ratings_over');
+        set_votes($(this).parent());
+    }
+);
+*/	
+	
+});
+</script>
+
+</head>
+<body>
+
+<div class="main">
+
+	<div id="r1" class="rate_widget">
+		<div class="star_1 ratings_stars"></div>
+		<div class="star_2 ratings_stars"></div>
+		<div class="star_3 ratings_stars"></div>
+		<div class="star_4 ratings_stars"></div>
+		<div class="star_5 ratings_stars"></div>
+	</div>	
+</div>
+</body>
+
+

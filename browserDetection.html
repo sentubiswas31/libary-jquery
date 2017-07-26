@@ -1,0 +1,43 @@
+<!doctype html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1, user-scalable=no" />
+<title>Welcome to our site</title>
+<style href="css/style.css" type="text/css"></style>
+
+
+
+<script>
+/*function isMacintosh() {
+  return navigator.platform.indexOf('Mac') > -1
+}
+
+function isWindows() {
+  return navigator.platform.indexOf('Win') > -1
+}*/
+
+/*if (navigator.platform.indexOf('Win') > -1) {
+	alert("Mac");
+} else{
+	alert("Win");
+};*/
+
+</script>
+
+
+
+</head>
+<body>
+
+	<div id="os"></div>
+	<div id="browser"></div>
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/browser.js"></script>
+	<script>
+		$('#os').html("Your browser is running on: <b>" + $.client.os + "</b>");
+		$('#browser').html("Your browser is: <b>" + $.client.browser + "</b>");
+	</script>
+
+
+</body>
+</html>

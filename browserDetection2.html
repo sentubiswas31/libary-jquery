@@ -1,0 +1,84 @@
+<!doctype html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1, user-scalable=no" />
+<title>Welcome to our site</title>
+<style href="css/style.css" type="text/css"></style>
+
+
+
+<script>
+/*function isMacintosh() {
+  return navigator.platform.indexOf('Mac') > -1
+}
+
+function isWindows() {
+  return navigator.platform.indexOf('Win') > -1
+}*/
+
+/*if (navigator.platform.indexOf('Win') > -1) {
+	alert("Mac");
+} else{
+	alert("Win");
+};*/
+
+</script>
+
+
+
+</head>
+<body>
+
+
+	<script src="js/jquery.min.js"></script>
+	<SCRIPT>	
+
+		if (navigator.platform.indexOf('Win') > -1) {
+			alert("Win");
+			//Check if browser is IE or not
+	        if (navigator.userAgent.search("MSIE") >= 0) {
+	            alert("Browser is InternetExplorer");
+	        }
+	        //Check if browser is Chrome or not
+	        else if (navigator.userAgent.search("Chrome") >= 0) {
+	            alert("Browser is Chrome");
+	        }
+	        //Check if browser is Firefox or not
+	        else if (navigator.userAgent.search("Firefox") >= 0) {
+	            alert("Browser is FireFox");
+	        }
+	        //Check if browser is Safari or not
+	        else if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) {
+	            alert("Browser is Safari");
+	        }
+	        //Check if browser is Opera or not
+	        else if (navigator.userAgent.search("Opera") >= 0) {
+	            alert("Browser is Opera");
+	        }
+		} else if(navigator.platform.indexOf('Mac') > -1){
+			alert("Mac");
+			//Check if browser is IE or not
+	        if (navigator.userAgent.search("MSIE") >= 0) {
+	            alert("Browser is InternetExplorer");
+	        }
+	        //Check if browser is Chrome or not
+	        else if (navigator.userAgent.search("Chrome") >= 0) {
+	            alert("Browser is Chrome");
+	        }
+	        //Check if browser is Firefox or not
+	        else if (navigator.userAgent.search("Firefox") >= 0) {
+	            alert("Browser is FireFox");
+	        }
+	        //Check if browser is Safari or not
+	        else if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) {
+	            alert("Browser is Safari");
+	        }
+	        //Check if browser is Opera or not
+	        else if (navigator.userAgent.search("Opera") >= 0) {
+	            alert("Browser is Opera");
+	        }
+		};		
+	</SCRIPT>
+
+</body>
+</html>

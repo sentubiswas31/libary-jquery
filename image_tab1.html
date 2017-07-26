@@ -1,0 +1,63 @@
+<!doctype html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1, user-scalable=no" />
+<title>Welcome to our site</title>
+<link href="css/boilerplate.css" rel="stylesheet" type="text/css">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+<style>
+img{	
+	width:120px; 
+	height: 80px;
+	display: inline-block;
+	float:left;
+	margin: 0 30px 30px 0;
+	border:1px solid red; 
+}
+.bigImgbox{
+	width:275px; 
+	height:183px;
+	margin: 0 auto;
+	border:1px solid red; 
+}
+.bigImgbox img{
+	width:275px; 
+	height:183px;	
+}
+</style>
+
+<script>
+
+$(document).ready(function(){
+	var messi = new Array();
+	for(var i=0; i<=5; i++){
+		messi[i] = i+1;	
+		$(".thubm_img").append("<img id="+i+" onclick='bigImg("+i+")' src='images/messi"+messi[i]+".jpg' alt=''/>");
+	}	
+});
+function bigImg(i){
+	//alert(i);
+	var i = i+1;
+	$(".bigImgbox").html("<img src='images/messi"+[i]+".jpg' alt=''/>");	
+}
+
+</script>
+
+</head>
+<body>
+
+<div class="gridContainer clearfix">	
+	<div class="thubm_img clearfix">
+
+	</div>
+	<div class="bigImgbox clearfix">
+		<img src='images/messi1.jpg' alt=''/>
+	</div>
+</div>
+
+<!--img src="images/messi1.jpg" alt=""/-->
+
+</body>
+</html>

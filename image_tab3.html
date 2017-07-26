@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script src="js/jquery.js"></script>
+<meta charset="utf-8">
+<title>Welcome</title>
+
+<style id="jsbin-css">
+#content {width:300px; overflow:auto; margin:0 auto;}
+#allImg {}
+#allImg img{ float:left; width:30%;opacity:.5; cursor:pointer; margin:5px}
+</style>
+
+<script>
+$(document).ready(function(){    
+  /*$("#allImg").on("click","img",function(){
+    $("#mainImg img").prop("src", $(this).prop("src"));
+  });  */
+  
+  $("#allImg").on("click", "img", function(){
+      var getUrl = $(this).prop("src");
+      $("#mainImg img").prop("src", getUrl)
+      //alert(getUrl);
+  })
+
+});
+</script>
+</head>
+
+<body>
+<div id="content">
+    <div id="mainImg"><img src="images/messi1.jpg"></div>
+  <div id="allImg">
+    <img src="images/messi1.jpg">
+    <img src="images/messi2.jpg">
+    <img src="images/messi3.jpg">  
+  </div>
+</div> 
+ 
+</body>
+</html>

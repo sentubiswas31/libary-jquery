@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Welcome to our site</title>
+
+<link rel="stylesheet" type="text/css" href="styles.css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+
+<script>
+
+$(document).ready(function(){	
+
+	function boxArea(){
+		var scr_width  = $(window).width();
+		var scr_height = $(window).height();
+		
+		var img_width = $('.className').outerWidth();
+		var img_height = $('.className').outerHeight();		
+		
+		$(".className").css({
+			position:'absolute',
+			border:'1px solid red',
+			left: (scr_width-img_width)/2,
+			top: (scr_height-img_height)/2,
+		});
+	}
+	boxArea();
+    $(window).resize(function(){
+		/*var scr_width  = $(window).width();
+		var scr_height = $(window).height();
+		
+		var img_width = $('.className').outerWidth();
+		var img_height = $('.className').outerHeight();		
+		
+		$(".className").css({
+			position:'absolute',
+			border:'1px solid red',
+			left: (scr_width-img_width)/2,
+			top: (scr_height-img_height)/2,
+		});   */
+		boxArea();    
+    });
+  $(window).resize();
+});
+</script>
+
+<!--<script type="text/javascript">
+$(document).ready(function(){
+						   
+	$(window).resize(function(){
+		$('.className').css({
+			position:'absolute',
+			left: ($(window).width() - $('.className').outerWidth())/2,
+			top: ($(window).height() - $('.className').outerHeight())/2
+		});	
+	});
+	$(window).resize();
+});
+</script>-->
+
+</head>
+
+<body style="margin:0px;">
+
+<div class="className">
+	<img src="http://img1.exportersindia.com/product_images/bc-small/dir_8/215980/football-jonex-boss-294091.jpg"/>
+</div>
+
+
+
+<button id="button1">button1</button>
+<button id="button2">button2</button>
+
+<script>
+/*function myFunction() {
+    window.open("http://www.w3schools.com");
+}*/
+$("#button1").click(function(){
+	window.open("http://www.w3schools.com", '_blank');
+});
+$("#button2").click(function(){
+	window.location.href = "http://www.google.com";
+});
+</script>
+
+
+</body>
+</html>

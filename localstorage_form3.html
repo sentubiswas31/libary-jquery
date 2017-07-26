@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1, user-scalable=no" />
+<title>Welcome to our site</title>
+<link href="css/boilerplate.css" rel="stylesheet" type="text/css">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+</head>
+
+<body>
+<div class="gridContainer clearfix">
+  <div class="container">
+  <form>
+     <table width="100%" cellspacing="0" cellpadding="4" border="0">
+        <tr>
+          <td width="20%"> Type of enquery </td>
+          <td>
+            <select id="type">
+              <option>Please Select</option>
+              <option value="General">General</option>
+              <option value="Sale">Sale</option>
+              <option value="Support">Support</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Name </td>
+          <td><input type="text" placeholder="Your name" id="name"/></td>
+        </tr>
+        <tr>
+          <td>Email address</td>
+          <td><input type="email" placeholder="Your email id" id="email"/></td>
+        </tr>
+        <tr>
+          <td>Message</td>
+          <td>
+            <textarea id="message"> Your message here...</textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+            <input type="checkbox" id="subscribe"/> Subscribe to our newsletter 
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+            <input type="button" id="submit" onclick="submitForm()" value="Submit" /> 
+          </td>
+        </tr>
+     </table>
+     <br><br>
+     <table width="100%" cellspacing="0" cellpadding="4" border="1">
+        <tr>
+          <th width="20%">Type of enquery </th>
+          <th width="20%">Name </th>
+          <th width="20%">Email address </th>
+          <th width="20%">Message </th>
+          <th width="20%">Action </th>
+        </tr>        
+      </table>
+      <table width="100%" cellspacing="0" cellpadding="4" border="1" id="valTb">
+        <!--tr>
+          <td width="20%" id="type"> &nbsp; </td>
+          <td width="20%" id="name"> &nbsp;  </td>
+          <td width="20%" id="email"> &nbsp;  </td>
+          <td width="20%" id="message"> &nbsp;  </td>
+          <td width="20%" align="center">
+            <button id="edit">Edit</button> 
+            <button id="delete">Delete</button>
+          </td>
+        </tr-->
+      </table>
+
+
+
+     </form>
+  </div>
+</div>
+
+<!-- include jQuery library -->
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+<script type="text/javascript">
+
+    var dataArray = [];
+    var currntObj;
+
+  function submitForm(){
+
+    //alert("hello");
+    /*var typeVal       = $("#type").val();
+    var nameVal       = $("#name").val();
+    var emailVal      = $("#email").val();
+    var messageVal    = $("#message").val();
+    var subscribeVal  = $("#subscribe").prop("checked");
+    alert(subscribeVal);*/
+
+    var dataObj = {
+        typeVal       : $("#type").val(),
+        nameVal       : $("#name").val(),
+        emailVal      : $("#email").val(),
+        messageVal    : $("#message").val(),
+        subscribeVal  : $("#subscribe").prop("checked")
+    }
+
+    //alert(dataObj);
+    //alert(dataArray.push(dataObj));
+    dataArray.push(dataObj);
+    localStorage.setItem("dataArray", JSON.stringify(dataArray));
+    //alert(dataArray);
+    datdaProcess();
+  }
+
+  function datdaProcess() {
+    //alert("datdaProcess");
+    currntObj = JSON.parse(localStorage.getItem("dataArray"));
+    alert(currntObj)
+    var tbStr = "";
+    for (var i = 0; i <currntObj.length; i++ ) {
+    //alert(i);
+    tbStr += "<tr id='ttt'>";
+    //alert(currntObj[i].subscribe);
+    tbStr += "<td width='20%'>"+currntObj[i].typeVal+"</td>"
+            +"<td width='20%'>"+currntObj[i].nameVal+"</td>"
+            +"<td width='20%'>"+currntObj[i].emailVal+"</td>"
+            +"<td width='20%'>"+currntObj[i].messageVal+"</td>"
+            +"<td width='20%' align='center'>"+'<input type="button" value="Edit" id="editBtn" name="Edit"/>'+"</td>";
+    tbStr += "</tr>";
+    };
+    $("#valTb").html(tbStr);
+
+    $("#type").val("");
+    $("#name").val("");
+    $("#email").val("");
+    $("#message").val("");
+    $("#subscribe").prop("checked");
+  }
+
+  //edit
+  $("#valTb").on("click", '#editBtn', function(){
+    
+    var tdList = $(this).parents().eq(1).find("td");
+
+    /*var editedtype = tdList.eq(0).html();
+    var editedtype = tdList.eq(1).html();
+    var editedtype = tdList.eq(2).html();
+    var editedtype = tdList.eq(3).html();
+    var editedtype = tdList.eq(4).html();*/
+
+    $("#type").val(tdList.eq(0).html());
+    $("#name").val(tdList.eq(1).html());
+    $("#email").val(tdList.eq(2).html());
+    $("#message").val(tdList.eq(3).html());
+    $("#subscribe").prop("checked",tdList.eq(4).html());
+    
+    /*$("#type").val(),
+    $("#name").val(),
+    $("#email").val(),
+    $("#message").val(),
+    $("#subscribe").prop("checked")*/
+
+  });
+
+  //delete
+  $("#valTb").on("click", '#delete', function(){
+    alert("Delete");
+  });
+
+</script>
+
+</body>
+</html>

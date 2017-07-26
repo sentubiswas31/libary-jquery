@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome</title>
+
+<script src="js/jquery-2.1.4.min.js"></script>
+
+<!--http://api.geonames.org/citiesJSON?north=44.1&south=-9.9&east=-22.4&west=55.2&lang=de&username=demo-->
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$.ajax({
+		url: 'http://api.geonames.org/citiesJSON?north=44.1&south=-9.9&east=-22.4&west=55.2&lang=de&username=demo',
+		type: 'GET',
+		dataType: 'JSON',
+		success: function(data){
+			//alert("success");
+			//alert(JSON.stringify(data));
+			var dataLen = data.geonames.length;
+			alert(dataLen);
+			for (var i = 0; i <dataLen; i++) {
+				//Things[i]
+				var eachLi = "<li>"+data.geonames[i].name+"</li>";
+				$(".gamesList").append(eachLi);
+			};
+		},
+		error: function(xhr, ajaxOptions, thrownError){
+			alert("Data Load fail" + thrownError);
+		}
+	});
+});
+</script>
+
+
+</head>
+<body>
+	<div id="result">
+	  <ul class="gamesList">
+	  	<!--li> Hello &nbsp; </li-->
+	  </ul>
+	</div>
+</body>
+</html>

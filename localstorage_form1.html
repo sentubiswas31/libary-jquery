@@ -1,0 +1,166 @@
+<!doctype html>
+<html class="">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1, user-scalable=no" />
+<title>Welcome to our site</title>
+<link href="css/boilerplate.css" rel="stylesheet" type="text/css">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+<div class="gridContainer clearfix">
+<div class="container">
+    <h1>HTML5 Local Storage Example</h1>
+      
+      <form method="" class="form-horizontal">
+        <fieldset>
+          <legend>Enquiry Form</legend>
+          <div class="control-group">
+            <div class="controls">
+              <select name="type" id="type">
+                <option value="">Please select</option>
+                <option value="general">General</option>
+                <option value="sales">Sales</option>
+                <option value="support">Support</option>
+              </select>
+            </div>
+          </div>
+      
+          <div class="control-group">
+            <label class="control-label" for="name">Name</label>
+            <div class="controls">
+              <input class="input-xlarge" type="text" name="name" id="name" value="" maxlength="50">
+            </div>
+          </div>
+    
+          <div class="control-group">
+            <label class="control-label" for="email">Email Address</label>
+            <div class="controls">
+            <input class="input-xlarge" type="text" name="email" id="email" value="" maxlength="150">
+            </div>
+          </div>
+        
+          <div class="control-group">
+            <label class="control-label" for="message">Message</label>
+            <div class="controls">
+              <textarea class="input-xlarge" name="message" id="message"></textarea>
+            </div>
+          </div>
+          
+          <div class="control-group">
+            <div class="controls">
+              <label class="checkbox">
+                <input name="subscribe" id="subscribe" type="checkbox">
+                Subscribe to our newsletter
+              </label>
+            </div>
+          </div>          
+        </fieldset>        
+        <div class="form-actions">
+          <input type="button" name="submit" id="submitBtn" value="Send" class="btn btn-primary">
+        </div>
+      </form>
+
+      <table class="table table-border" cellpadding="0" cellspacing="0" width="100%" border="1" id="valTb">
+          <tr>
+              <th>General  </th>
+              <th>Name     </th>
+              <th>Email    </th>
+              <th>Message  </th>
+              <th>Action   </th>
+          </tr>
+          <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+          </tr>
+      </table>
+
+    </div>
+    
+    <!-- include jQuery library -->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+    $(document).ready(function () {
+        var dataArray = [];
+        var currObj;
+
+        if(localStorage.getItem("dataArray")!=null){
+            dataProcess();
+            dataArray = JSON.parse(localStorage.getItem("dataArray"));
+        }
+
+        $("#submitBtn").on("click",function(){
+            //alert($("#type").val()+'--'+$("#name").val()+'--'+$("#email").val()+'--'+$("#message").val()+'--'+$("#subscribe").prop('checked'));
+            var dataObj = 
+            {
+              type       : $("#type").val(),
+              name       : $("#name").val() ,
+              email      : $("#email").val(),
+              message    : $("#message").val(),
+              subscribe  : $("#subscribe").prop('checked')
+            }
+
+            dataArray.push(dataObj);
+            localStorage.setItem("dataArray",JSON.stringify(dataArray));
+            //alert(localStorage.getItem("dataArray"));
+            dataProcess();
+            
+        });
+
+          function dataProcess() {            
+            currObj = JSON.parse(localStorage.getItem("dataArray"));
+
+            var tbStr = "<tr><th>General</th><th>Name</th><th>Email</th><th>Message</th><th>Action</th></tr>"
+                       +"<tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>";
+
+            tbStr += "<tr>";
+
+            for (var i = 0; i < currObj.length; i++) {
+                //valTb
+                tbStr += "<td>"+currObj[i].type+"</td>"
+                      +"<td>"+currObj[i].name+"</td>"
+                      +"<td>"+currObj[i].email+"</td>"
+                      +"<td>"+currObj[i].message+"</td>"
+                      //+"<td>"+dataObj.subscribe+"</td>"
+                      +'<td><input type="button" name="submit" id="editBtn" data-num="'+i+'" value="Edit" class="btn btn-primary">'
+                      +'<input type="button" name="submit" id="deleteBtn" data-num="'+i+'" value="Delete" class="btn btn-primary">'
+                      +'</td>';
+                tbStr += "</tr>"; 
+              };
+              $("#valTb").html(tbStr);
+            }
+
+          $("table").on("click", "#editBtn", function() {
+             //alert($(this).data("num"));
+             var index = $(this).data("num");
+             //$("#type").attr("val",currObj[index].type);
+             $("#type > [value=" + currObj[index].type + "]").attr("selected", "true");
+             $("#name").attr("value",currObj[index].name);
+             $("#email").attr("value",currObj[index].email);
+             $("#message").val(currObj[index].message);
+             $("#subscribe").prop('checked',currObj[index].subscribe);
+          });
+
+          $("table").on("click","#deleteBtn",function() {
+              //alert($(this).data("num"));
+              var index = $(this).data("num");
+              currObj.splice(index, 1);
+              localStorage.setItem("dataArray",JSON.stringify(currObj));
+              dataProcess();
+              dataArray = JSON.parse(localStorage.getItem("dataArray"));
+          });
+
+    });
+    </script>
+
+</div>
+
+</body>
+</html>

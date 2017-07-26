@@ -1,0 +1,111 @@
+<!doctype html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1, user-scalable=no" />
+<title>Welcome to our site</title>
+<link href="css/boilerplate.css" rel="stylesheet" type="text/css">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+<style>
+.container{
+	width: 800px;
+	margin: 0 auto;
+}
+ul#tabs {
+  list-style-type: none;
+  margin: 0 0 30px 0;
+  padding: 0;
+  text-align: center; 
+}
+ul#tabs li {
+  display: inline-block;
+  background-color: #32c896;
+  border-bottom: solid 5px #238b68;
+  padding: 5px 20px;
+  margin-bottom: 4px;
+  color: #fff;
+  cursor: pointer; 
+}
+ul#tabs li:hover {
+  background-color: #238b68;
+}
+ul#tabs li.active {
+  background-color: #238b68;
+}
+ul#tab {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; 
+}
+ul#tab li {
+  display: none;
+  padding: 30px;
+  border: solid 20px #d2f4e9; 
+}
+ul#tab li.active {
+  display: block; 
+}
+ul#tab li h2 {
+  font-weight: 400;
+  margin-bottom: 30px;
+  padding-bottom: 5px;
+  border-bottom: solid 5px #32c896;
+}
+</style>
+
+<script>
+
+$(document).ready(function(){
+  $("ul#tabs li").click(function(e){
+    //alert("dasd");
+      if (!$(this).hasClass("active")) {
+        var tabNum = $(this).index();
+        //alert(tabNum);
+        var nthChild = tabNum+1;
+        alert(nthChild);
+        $("ul#tabs li.active").removeClass("active");
+        $(this).addClass("active");
+        $("ul#tab li.active").removeClass("active");
+        $("ul#tab li:nth-child("+nthChild+")").addClass("active");
+      }
+  });
+});
+
+</script>
+Rahane plays with fire, finding at a length ball of the back spot.
+</head>
+<body>
+<div class="container">
+    <ul id="tabs">
+        <li class="active">Tab 1</li>
+        <li>Tab 2</li>
+        <li>Tab 3</li>
+        <li>Tab 4</li>
+        <li>Tab 5</li>
+    </ul>
+    <ul id="tab">
+        <li class="active">
+            <h2>This is the first tab</h2>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, fugit nobis qui temporibus culpa inventore consectetur aliquam. Unde, itaque, quos, laboriosam, reprehenderit ipsa deleniti sequi animi eveniet dolorem maiores alias. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, aperiam, optio, magnam sed aliquam harum sunt ad est velit ipsam ratione quo perferendis! Suscipit necessitatibus reiciendis nobis nam non est. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, quis, iste expedita quo soluta maxime voluptas delectus quod quaerat repudiandae perspiciatis voluptatum tempore natus eum veritatis atque voluptates ea illo?
+        </li>
+        <li>
+            <h2>This is the second tab</h2>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, fugit nobis qui temporibus culpa inventore consectetur aliquam. Unde, itaque, quos, laboriosam, reprehenderit ipsa deleniti sequi animi eveniet dolorem maiores alias. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, pariatur, laborum, sit molestiae eos itaque iste repudiandae eum aperiam ad sapiente dicta reprehenderit. Omnis culpa harum blanditiis voluptates explicabo quis?
+        </li>
+        <li>
+            <h2>Tab number three wee hee</h2>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, fugit nobis qui temporibus culpa inventore consectetur aliquam. Unde, itaque, quos, laboriosam, reprehenderit ipsa deleniti sequi animi eveniet dolorem maiores alias. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, quod mollitia iusto non sapiente ipsa dicta quis perspiciatis voluptates ducimus. Aliquid, voluptatem non necessitatibus dolor nostrum a earum rerum ex. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, unde, iusto, consectetur, cumque cum illum eligendi necessitatibus molestiae aut odit nostrum laborum accusantium enim! Minima, delectus porro non consequuntur quos.
+        </li>
+        <li>
+            <h2>Fourth tab not bad</h2>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, fugit nobis qui temporibus culpa inventore consectetur aliquam. Unde, itaque, quos, laboriosam, reprehenderit ipsa deleniti sequi animi eveniet dolorem maiores alias. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, repellendus explicabo recusandae dicta tempore nam perspiciatis atque vero praesentium hic. Laudantium tempore quas consequatur exercitationem eveniet voluptatem reiciendis quidem tenetur! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, repudiandae, natus odio minus voluptates culpa sapiente vitae nulla ad? Distinctio, laboriosam assumenda facilis aspernatur consequuntur praesentium inventore id earum hic!
+        </li>
+        <li>
+            <h2>Tab number five here we go!</h2>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, fugit nobis qui temporibus culpa inventore consectetur aliquam. Unde, itaque, quos, laboriosam, reprehenderit ipsa deleniti sequi animi eveniet dolorem maiores alias. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, a, reprehenderit, quod at quae numquam quaerat delectus eius ex eligendi dolorum sapiente id saepe. Possimus provident porro neque ut pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, velit, unde, pariatur, illo quis tenetur eaque harum similique quos deserunt laborum dolor molestias sint cumque facere consectetur neque! Deleniti, aliquid.
+        </li>
+    </ul>
+</div>
+</body>
+</html>

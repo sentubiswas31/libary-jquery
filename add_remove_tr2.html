@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<title> Welcome </title>
+		<script src="js/jquery.js"></script>
+		<script>
+		$(document).ready(function() {
+			var id = 0;
+			$("#add").on("click", function() {
+				id++;
+				// alert("Add");
+				var prot = $(".prototype").clone();
+				prot.attr("class","");
+				prot.find(".id").attr("value", id);
+				$(".dynatable").find("tbody").prepend(prot);
+			});
+			$("body").on("click", ".remove", function() {
+				alert("click");
+				$(this).parents("tr").remove();
+			});
+		});
+		</script>
+	</head>
+	<body>
+
+	<table class="dynatable" width="750" align="center">
+		<thead>
+			<tr>
+				<th> ID </th>
+				<th> Name </th>
+				<th> Col 3 </th>
+				<th> Col 4 </th>
+				<th> <button id="add">Add </button> </th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class="prototype">
+				<td><input type="text" name="id[]" value="0" class="id" /></td>
+				<td><input type="text" name="name[]" value="" /></td>
+				<td><input type="text" name="col4[]" value="" /></td>
+				<td><input type="text" name="col3[]" value="" /></td>
+				<td><button class="remove"> Remove </button>
+			</tr>
+		</tbody>
+	</table>
+
+
+	</body>
+</html>

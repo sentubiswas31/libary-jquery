@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+<title>Welcome to our site</title>
+<script src="js/jquery.js"></script>
+
+<style>
+.container {
+	 display:block;
+	 width: 500px;
+	 height : auto ;
+	 margin: 0 auto;
+   font-family: arial;
+   font-size: 14px;
+   font-family: arial;
+}
+ .item {
+	 display : block;
+	 width : inherit;
+	 height : 40px;
+	 line-height : 40px;
+	 background : #555 ;
+	 border: 1px solid #000;
+	 cursor: pointer;
+	 color: #fff;
+   padding-left: 15px;
+}
+ .item-data {
+	 display : none ; 
+	 width : inherit ;
+	 height : auto ;
+	 border: 1px solid #ccc;
+   padding: 15px 7px 15px 8px;
+}
+ .active {
+   background : #eee ;
+	 color : #000 ;
+}
+ .item-data div {
+ 	 padding: 10px;
+}
+
+</style>
+
+<script>
+$(document).ready(function(e){
+ 	$('.item').click(function (e){
+ 		if($(this).next('.item-data').css('display') != 'block'){
+ 			$('.active').slideUp('fast').removeClass('active');
+ 			$(this).next('.item-data').addClass('active').slideDown('slow');
+ 		} else {
+ 			$('.active').slideUp('fast').removeClass('active');
+ 		}
+ 	});
+});
+</script>
+
+</head>
+<body>
+	<div class='container'>
+    <div class='item'>What is Lorem Ipsum?</div>
+    <div class='item-data'>
+       <div>
+          Lorem Ipsum is simply dummy text of 
+       </div>
+    </div>
+    <div class='item'>Where does it come from?</div>
+    <div class='item-data'>
+       <div>
+          Contrary to popular belief, Lorem Ipsum is not 
+       </div>
+    </div>
+    <div class='item'>Why do we use it?</div>
+    <div class='item-data'>
+       <div>
+          It is a long established fact that a reader will be distracted by the readable content
+       </div>
+    </div>
+    <div class='item'>Where can I get some?</div>
+    <div class='item-data'>
+       <div>
+          There are many variations of passages of Lorem Ipsum available, but the majority
+       </div>
+    </div>
+ </div>
+</body>
+
+

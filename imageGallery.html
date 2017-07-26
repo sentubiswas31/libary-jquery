@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/gallery.js"></script>   
+    <style type="text/css">
+      #mycontainer{
+        width: 800px;
+        height: 600px;
+        overflow: hidden;
+      }
+      #mycontainer ul{ padding: 0px; margin: 0px; }
+      #mycontainer ul li{ padding: 0px; margin: 0px; list-style-type: none; }
+    </style>
+ </head>
+ <body>
+    <div id="mycontainer">
+       <div id= wrapper>
+          <ul id="flip">
+             <li><img id="contact" src="images/img01.jpg" /></li>
+             <li><img id="info" src="images/img02.jpg" /></li>
+             <li><img id="home" src="images/img03.jpg" /></li>
+             <li><img id="product" src="images/img04.jpg" /></li>
+             <li><img id="thumbs" src="images/img05.jpg" /></li>
+          </ul>
+       </div>       
+    </div>
+    <button id="addImage">Add Image</button>
+    <script type="text/javascript">
+       /*$("#addImage").on("click", function(){
+         alert("Hello");
+          $("#mycontainer div ul").append('<li><img id="Coin" src="./Photos/Coin1.png" /></li>');
+       });*/
+       $("#addImage").click(getAlert);
+       function getAlert(){
+        alert("Hello");
+       }
+    </script>
+ </body>
+</html>

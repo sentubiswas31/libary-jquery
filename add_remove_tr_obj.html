@@ -1,0 +1,85 @@
+<html>
+	<head>
+		<title> Welcome </title>
+
+
+	</head>
+	<body>
+	
+   
+		<ul data-role="listview" data-inset="true">
+	        <li>
+	            <label for="txt-painter-name">
+	            <b>Painter Name</b></label>
+	            <input id="txt-painter-name" type="text" name="pname" />
+	        </li>
+	        <li>
+	            <label for="txt-painter-mobile">
+	                <b>Painter Mobile Number</b></label>
+	            <input id="txt-painter-mobile" type="text" name="number"/>
+	        </li>
+	        <li>
+	            <button id="btn-painter-attendance" class="ui-btn ui-corner-all ui-btn-d" onclick="serializeObject();">Add</button>
+	        </li>
+	    </ul>
+	    <ul class="dataList">
+	    	<!--li>
+	    		<p>Name: </p>
+	    		<p>Mobile: </p>
+	    	</li-->
+	    </ul>
+   
+    <div id="data"></div>
+
+<script src="js/jquery.min.js"></script>
+
+	<!--script type="text/javascript">
+			$.fn.serializeObject = function(){
+			    var o = {};
+			    var a = this.serializeArray();
+			    $.each(a, function() {
+			        if (o[this.name] !== undefined) {
+			            if (!o[this.name].push) {
+			                o[this.name] = [o[this.name]];
+			            }
+			            o[this.name].push(this.value || '');
+			        } else {
+			            o[this.name] = this.value || '';
+			        }
+			    });
+			    return o;
+			};
+
+			$(function() {
+			    $('form').submit(function() {
+			        $('#data').text(JSON.stringify($('form').serializeObject()));
+
+			        return false;
+			         var str = '<li>'+
+						    	   '<p>Name:'+pname+'</p>'+
+						    		'<p>Mobile:'+number+'</p>'+
+						    	'</li>';
+				     $("#dataList").append(str);
+			    });
+			});
+	</script-->
+
+<script type="text/javascript">
+	
+
+var data = [];
+function serializeObject() {
+   data.push({
+   		painterName : $("#txt-painter-name").val(), 
+   		painterMobile :$("#txt-painter-mobile").val()
+   });
+
+   console.log(data);
+    
+}
+
+
+</script>
+
+	</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width-device-width, minimum-scale=1.0; maximum-scale=1.0"/>
+<title>Welcome</title>
+<script src="jquery.js"></script>
+<style>
+.highlight{
+	background: #f00;
+}
+</style>
+</head>
+<body>
+
+<script>
+
+function submit(){
+	var nameBox = document.getElementById('t1').value;
+	var passBox = document.getElementById('p1').value;
+	var myname="sentu123";
+	var myPass="sentu321";
+	if(nameBox==myname && passBox ==myPass){
+		alert("Login Success");
+		window.location = "test1.html";
+	}else if(nameBox=="" || nameBox != myname){
+		alert("Please enter your name");
+	}
+	else if(passBox =="" || passBox != myPass){
+		alert("Please enter your password");
+	}
+}
+</script>  
+  
+
+
+<table border="0" cellpadding="5" cellspacing="0" width="750" align="center">
+<tr>
+	<td>User Name</td>
+	<td><input type="text" name="t1" id="t1" /></td>
+</tr>
+<tr>
+	<td>Password</td>
+	<td><input type="password" name="p1" id="p1" /></td>
+</tr>
+<tr>  
+	<td>&nbsp;</td>
+	<td><input onclick="submit()" type="button" value="submit" name="b1" id="b1" /></td>
+</tr>
+</table>
+
+<div class="txtLength">We are Indian.</div>
+
+<script type="text/javascript">
+	function valuetst(){
+		//alert("textLength");
+		var textLength = $(".txtLength").html();
+		alert(textLength);
+	}
+	valuetst();
+</script>
+
+</body>
+</html>

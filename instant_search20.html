@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<!--Created using jsbin.com
+  Source can be edited via http://jsbin.com/ejiseg/2/edit -->
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+<!--script src="js/jquery.js"></script-->
+
+<meta charset="utf-8">
+<title>Welcome</title>
+
+</head>
+<body> 
+
+  <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>How to make search input to filter through list using jQuery</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+$( document ).ready(function() {
+  $("#keyVal").keyup(function() {
+    var keyVal = $(this).val().toLowerCase();
+    //alert(keyVal);
+    $(".countryList li").each(function() {
+      var liVal = $(this).text().toLowerCase();
+        if(liVal.indexOf(keyVal) == 0) {
+          $(this).show();
+        }else{
+          $(this).hide();
+        }
+        //alert(liVal.indexOf(keyVal) == 0);
+    });
+  });
+});
+</script>
+</head>
+<body>
+<div style="margin-left: auto;margin-right: auto;width: 200px;">
+  <input placeholder="Search..." id="keyVal" type="text" />
+  <br />
+  <ul class="countryList">
+    <li><a href="#">India</a></li>
+    <li><a href="#">United States</a></li>
+    <li><a href="#">Pakistan</a></li>
+    <li><a href="#">Sri Lanka</a></li>
+    <li><a href="#">Bangladesh</a></li>
+    <li><a href="#">Canada</a></li>
+    <li><a href="#">United Kingdom</a></li>
+    <li><a href="#">Australia</a></li>
+    <li><a href="#">Argentina</a></li>
+  </ul>
+</div>
+</body>
+</html>
+	
+	
+</body>
+</html>

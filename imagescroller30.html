@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Welcome</title>
+<script src="js/jquery.js"></script>
+<style type="text/css">
+  .main{ width: 570px; margin: 0 auto; border: 1px solid red; }
+  .demo{ width: 570px; height: 320px; position: relative; }
+  .prev{ position: absolute; left: 0px; top: 50%; z-index: 11; }
+  .next{ position: absolute; right: 0px; top: 50%; z-index: 11; }
+  .container{ position: relative; margin: 0 auto; text-align: center; }
+  .container div{ width: 100%; display: none; }
+  .container img{ width: 100%; height: auto; } 
+
+</style>
+</head>
+<body>
+<div class="main">
+  <section class="demo">    
+    <button class="prev"> Previous </button>
+    <button class="next"> Next </button>
+    <div class="container">
+      <div style="display: inline-block;"> <img src="images/1.jpg"/> </div>
+      <div> <img src="images/2.jpg"/> </div>
+      <div> <img src="images/3.jpg"/> </div>
+      <div> <img src="images/4.jpg"/> </div>
+      <div> <img src="images/5.jpg"/> </div>
+    </div>
+  </section>
+</div>
+
+<script type="text/javascript">
+  var currentIndex = 0;
+  var items = $(".container div");
+  var itemAmount  = items.length;
+  //alert(items.get());
+
+  function cycleItems(){
+    var item = $(".container div").eq(currentIndex);
+    items.hide();
+    item.css('display','inline-block');
+    //alert(item.get());
+  }
+  
+  $(".next").on("click", function(){
+    currentIndex += 1;
+    if(currentIndex > itemAmount - 1){
+      currentIndex = 0;
+    }
+    cycleItems();
+  });
+
+  $(".prev").on("click", function(){
+    currentIndex -= 1;
+    if(currentIndex <  0){
+      currentIndex = itemAmount - 1;
+    }
+    cycleItems();
+  });
+
+</script>
+
+</body>
+
+

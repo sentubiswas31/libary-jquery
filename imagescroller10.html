@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Welcome to our site</title>
+<script src="js/jquery.js"></script>
+
+<style>
+/*
+.main{
+	width: 275px;
+	height: 183px;
+	margin: 0 auto;
+}
+*/
+
+body{
+  font-size: 14px;
+  font-size: 1rem;
+  font-family: arial;
+}
+#slider {
+  position: relative;
+  overflow: hidden;
+  margin: 20px auto 0 auto;
+  border-radius: 4px;
+}
+
+#slider ul {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 200px;
+  list-style: none;
+}
+
+#slider ul li {
+  position: relative;
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0;
+  width: 500px;
+  height: 300px;
+  background: #ccc;
+  text-align: center;
+  line-height: 300px;
+}
+
+a.control_prev, a.control_next {
+  position: absolute;
+  top: 40%;
+  z-index: 999;
+  display: block;
+  padding: 4% 3%;
+  width: auto;
+  height: auto;
+  background: #2a2a2a;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+a.control_prev:hover, a.control_next:hover {
+  opacity: 1;
+  -webkit-transition: all 0.2s ease;
+}
+
+a.control_prev {
+  border-radius: 0 2px 2px 0;
+}
+
+a.control_next {
+  right: 0;
+  border-radius: 2px 0 0 2px;
+}
+
+.slider_option {
+  position: relative;
+  margin: 10px auto;
+  width: 160px;
+  font-size: 18px;
+}
+.main p{ 
+  font-size:110%;
+}
+
+</style>
+
+<script>
+jQuery(document).ready(function ($) {
+  
+  var sliderCount  = $("#slider ul li").length;
+  var sliderwidth  = $("#slider ul li").width();
+  var sliderheight = $("#slider ul li").height();
+  var sliderulWidth = sliderCount*sliderwidth;
+
+  $("#slider").css({ width: sliderwidth, height:sliderheight });
+  $("#slider ul").css({ width: sliderulWidth, marginLeft: -sliderwidth});
+  $("#slider ul li:last-child").prependTo("#slider ul");
+  //alert(sliderulWidth);
+
+  $(".control_prev").on("click", function(){
+    $("#slider ul").animate({
+      left: + sliderwidth
+    }, 200, function () {
+      $("#slider ul li:last-child").prependTo("#slider ul");
+      $("#slider ul").css("left","");
+    });
+  });
+
+  $(".control_next").on("click", function(){
+    $("#slider ul").animate({
+      left: - sliderwidth
+    }, 200, function () {
+      $("#slider ul li:first-child").appendTo("#slider ul");
+      $("#slider ul").css("left","");
+    });
+  });
+
+});    
+
+</script>
+
+</head>
+<body>
+
+<div class="main">
+	<div id="slider">
+	  <a href="#" class="control_next"> > </a>
+	  <a href="#" class="control_prev"> < </a>
+	  <ul>
+		  <li><img src="images/messi1.jpg" /></li>
+		  <li style="background: #aaa;"><img src="images/messi2.jpg" /></li>
+		  <li><img src="images/messi3.jpg" /></li>
+		  <li style="background: #aaa;"><img src="images/messi4.jpg" /></li>
+	  </ul>  
+</div>
+
+<div class="slider_option">
+  <input type="checkbox" id="checkbox">
+  <label for="checkbox">Autoplay Slider</label>
+</div> 
+
+</div>
+</body>
+
+

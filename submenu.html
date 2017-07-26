@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link href="css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="css/menu.css" rel="stylesheet" media="all">
+    <title>Hello World</title>
+</head>
+<body>
+<div class="sidebarOut">
+<div class="sidebar">
+    <ul class="nav">
+        <li><a href"#">Lorem <span class="arrow"> </span> </a></li> 
+        <li class="open"><a href"#">Ipsum<span class="plus"></span></a>
+            <ul class="drop">
+              <li><a href"#">Lorem</a></li>
+              <li><a href"#">Ipsum</a></li>
+              <li><a href"#">Dolor</a></li>
+            </ul>
+        </li>
+         <li class="open"><a href"#">Dolor<span class="plus"></span></a>
+            <ul class="drop">
+              <li><a href"#">Lorem</a></li>
+              <li><a href"#">Ipsum</a></li>
+              <li><a href"#">Dolor</a></li>             
+            </ul>
+        </li>
+        <li><a href"#">Open <span class="arrow"> </span> </a></li>
+        <li class="open"><a href"#">Nihili<span class="plus"></span></a>
+            <ul class="drop">
+              <li><a href"#">Ipsum</a></li>
+              <li><a href"#">Dolor</a></li>
+            </ul>   
+        </li>
+        <li><a href"#">Javak <span class="arrow"> </span> </a></li> 
+    </ul> 
+</div>
+</div>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script type="text/javascript">
+     $('.open').click(function () {
+         $(this).toggleClass('clicked active');
+         $(this).find('span').toggleClass('minus');
+      });     
+    </script>
+
+  </body>
+</html>

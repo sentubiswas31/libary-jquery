@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Welcome</title>
+
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="jquery-mobile/jquery-1.6.4.js" type="text/javascript"></script>
+<script src="jquery-mobile/jquery.mobile-1.0.min.js" type="text/javascript"></script>
+<link href="jquery-mobile/jquery.mobile-1.0.min.css" rel="stylesheet" type="text/css" />
+<link href="jquery-mobile/jquery.mobile.structure-1.0.min.css" rel="stylesheet" type="text/css" />
+<link href="jquery-mobile/jquery.mobile.theme-1.0.min.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" language="javascript">
+
+//http://kipiko.com/iphone.php?mode=userPurchaseList&user_id=1&device_id=123&langCode=en
+//http://www.kipiko.com/getData.php?mode=snapshotCityList&langId=1&langCode=en&page=landing
+
+$(document).ready(function(){
+
+/*	
+$.ajax({
+	type: "GET",		
+	url: 'http://www.kipiko.com/getData.php?mode=snapshotCityList&langId=1&langCode=en&page=landing',	
+	dataType:"json",
+	success: function (sentu) {
+	  for(j=0; j<sentu.length; j++){
+		
+		var eachli = "<li>" +sentu[j].city_name + "</li>";
+		$(".gamesList").append(eachli);
+	  };
+	  $(".gamesList").listview("refresh");
+	},
+	error:function(xhr, ajaxOptions, thrownError){ }	
+});
+*/
+
+$.getJSON('http://www.kipiko.com/getData.php?mode=snapshotCityList&langId=1&langCode=en&page=landing', function(sentu){
+	for(j=0; j<sentu.length; j++){		
+	var eachli = "<li>" +sentu[j].city_name + "</li>";
+	console.log("<li>" +sentu[j].city_name + "</li>");
+	$(".gamesList").append(eachli);
+  };
+  $(".gamesList").listview("refresh");
+});
+
+
+/*
+$.ajax({
+	type: "GET",		
+	url: 'http://www.kipiko.com/getData.php?mode=snapshotCityList&langId=1&langCode=en&page=landing',			
+	dataType:"json",
+	success: function (city) {	 
+	  for(j=0; j<city.length; j++){				  
+	      var links = "<li id ='" + city[j].city_name + "'><a href='#'>" + city[j].city_name +  "</a></li>";
+		  $(".gamesList").append(links);  
+		 }
+	   $(".gamesList").listview("refresh");
+	 },
+   error: function (xhr, ajaxOptions, thrownError) {
+  }
+});
+
+$.ajax({
+	type: "GET",		
+	url: 'http://kipiko.com/iphone.php?mode=userPurchaseList&user_id=1&device_id=123&langCode=en',			
+	dataType:"json",	
+	
+	success: function (details) {
+		var detailsText=new Array();
+	    for(i=0; i<details.purchaseGuideList.length; i++){	
+		  var json={};			  
+		  json.name=details.purchaseGuideList[i].city_name;
+		  json.lat=details.purchaseGuideList[i].latitude;
+		  json.long=details.purchaseGuideList[i].longitude;
+		  detailsText.push(json);
+		}	
+		
+	  	alert(detailsText);
+	
+		$(".gamesList li").click(function(){
+			var hitid=this.id;
+			$.each(detailsText, function(key, value) {
+				if(value.name==hitid){
+				   //alert(value.lat+'=='+value.long);
+				   $("#contentText2").html(value.lat+'=='+value.long);
+				}
+			});    
+		});
+	  },	  
+    error: function (xhr, ajaxOptions, thrownError){
+   alert("error");
+  }  
+});
+*/
+ 	
+});
+</script>
+
+</head>
+
+<body>
+<div id="result">
+  <ul class="gamesList" data-type="horizontal" data-role="listview">
+    <!-- <li><a href="#content">sfdfs ff fsdfdsf</a></li> -->
+  </ul>
+</div>   
+
+<br/>
+<br/>
+
+<div id="contentText2" style="border:1px solid red;">
+	&nbsp;
+</div>
+<br/>
+<br/>
+</body>
+</html>

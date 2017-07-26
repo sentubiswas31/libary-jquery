@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Welcome</title>
+<script src="js/jquery.js"></script>
+
+<style>
+body{
+    background:#eee;
+    margin:0;
+    padding:0;
+}
+.main{
+  width: 960px;
+  height: auto;
+  margin: 0 auto;
+  background: #fff;
+  padding: 50px 0;
+}
+
+
+.example{
+    background:#FFF;
+    width:275px;
+    border:1px #000 solid;
+    margin:0 auto;
+    padding:15px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+/*My slider styles*/
+#my_slider {
+    width: 275px;
+    height: 183px;
+    overflow: hidden;
+    position: relative;
+    list-style: none outside none;
+    padding: 0;
+    margin: 0;
+}
+#my_slider li {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display:none;
+}
+#my_slider li:first-child {
+    display:block;
+}
+#counter {
+    text-align:right;
+    font-size: 16px;
+    width: 275px;
+}
+
+</style>
+
+
+</head>
+<body>
+
+<div class="main">
+
+  <div class="example">
+      <ul id="my_slider">
+        <li><img src="images/messi1.jpg" /></li>
+        <li><img src="images/messi2.jpg" /></li>
+        <li><img src="images/messi3.jpg" /></li>
+        <li><img src="images/messi4.jpg" /></li>
+      </ul>  
+  </div>
+
+</div>
+
+<script>
+
+(function($){
+    $.fn.MySlider = function(interval) {
+        var slides;
+        var cnt;
+        var amount;
+        var i;
+        
+        function run() {
+            // hiding previous image and showing next
+            $(slides[i]).fadeOut(1000);
+            i++;
+            if (i >= amount) i = 0;
+            $(slides[i]).fadeIn(1000);
+
+            // updating counter
+            cnt.text(i+1+' / '+amount);
+
+            // loop
+            setTimeout(run, interval);
+        }
+
+        slides = $('#my_slider').children();
+        cnt = $('#counter');
+        amount = slides.length;
+        i=0;
+
+        // updating counter
+        cnt.text(i+1+' / '+amount);
+
+        setTimeout(run, interval);
+    };
+})(jQuery);
+
+// custom initialization
+jQuery(window).load(function() {
+    $('.smart_gallery').MySlider(3000);
+});
+
+</script>
+
+</div>
+</body>
+
+

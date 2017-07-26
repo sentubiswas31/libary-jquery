@@ -1,0 +1,114 @@
+<!doctype html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1, user-scalable=no" />
+<title>Welcome to our site</title>
+<style href="css/style.css" type="text/css"></style>
+<script src="js/jquery-1.11.3.min.js"></script>
+
+<style>
+.content a{
+	padding: 5px 10px;
+	display: block;
+	font: normal 13px/30px arial;
+	border-bottom: 1px solid #fff;
+	text-decoration: none;
+	outline: none;
+	color: #fff;
+	background: #999;
+}
+.content a:hover{
+	background: #666;
+	color: #fff;
+}
+.tabCoontent{
+	padding: 15px;
+	border: 1px solid #ebebeb;	
+}
+.content{
+	padding: 0;
+	background: #f0f0f0;
+	margin-bottom: 10px;
+}
+.content p{
+	padding: 0px;
+	margin: 0px;
+	/*padding: 10px 10px 0 10px;*/
+}
+</style>
+
+<script>
+
+/*$(document).ready(function(){
+	$(".content a").each(function(e){
+		$(this).click(function(){
+			//alert(e);			
+			$(".content p").each(function(i){	
+				var curId = $(this).attr('id');				
+				//alert(e==i);
+				setTimeout(function(){
+				if(e==i){
+					$("#"+curId).css({
+						display: 'block',
+						padding: '15px'
+					});					
+					$("#"+curId).toggle();  
+					$("#"+curId).slideDown('fast'); 
+				}else{
+					$("#"+curId).css({
+						display: 'none'
+					});
+				}
+				}, 600);
+			});
+		});
+	});	
+});*/
+
+
+$(document).ready(function(){
+	$(".content a").each(function(i){
+		alert(i);
+		//alert("head");
+		$(this).click(function(){
+			//alert("adasd");
+			$(".content div").each(function(e){
+				alert(i == e);
+				if(i == e){
+					//$(this).css({display:"block"});
+					$(this).slideDown();
+				}else{
+					$(this).slideUp();
+				}
+			});
+		});
+	});
+});
+
+</script>
+
+</head>
+<body>
+
+<div class="gridContainer clearfix">	
+	<div class="tabCoontent clearfix">
+		<div id="content1" class="content"> 
+			<a href="#"> Tab1 </a>
+			<div id="text1" style="display:block;">
+				<p>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. </p>
+				<p>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. </p>
+				<p>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.</p>
+			</div>
+		</div>
+		<div id="content1" class="content">
+			<a href="#"> Tab1 </a>
+			<div id="text2" style="display:none;"><p>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. </p></div>
+		</div>
+		<div id="content1" class="content">
+			<a href="#"> Tab1 </a>
+			<div id="text3" style="display:none;"><p>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.</p> </div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

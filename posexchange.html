@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <title>Welcome</title>
+      <script src="js/jquery.js"></script>
+      <style>
+         #botao {
+              cursor: pointer;
+          }
+          .main{
+            position: relative;
+          }
+          /*.menu{ height: 30px; background: #ccc; color: #000; }
+          #a1{ position: absolute; }
+          #a2{ position: absolute; }*/
+      </style>
+   </head>
+   <body>
+
+    <div class="main">     
+        <div id="a1">a1</div>
+        <div id="a2">a2</div>
+    </div>
+
+<script>  
+
+  /*$("#a1").click(function(){
+    alert("a1");
+    $(this).insertBefore("#a1");    
+  }); 
+  $("#a2").click(function(){
+    alert("a1");
+    $(this).insertBefore("#a1");    
+  });*/ 
+  
+  $(".main div").each(function(){
+    //alert($(this).attr("id"));
+    $(this).on('click', function(){
+      //alert($(this).attr("id"));
+      $(this).insertBefore(this);
+    });
+  });
+
+</script>
+      
+  </body>
+</html>

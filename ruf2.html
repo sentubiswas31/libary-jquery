@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<style>
+/*for accordian*/
+.menu-popup li.open {
+    position: relative;
+}
+.menu-popup li.open.active, .open:hover {
+    background-color: #eee;
+}
+.menu-popup li.open a{
+    padding: 10px 10px;
+    text-decoration: none
+}
+/*.menu-popup li.open:after {
+    font-size: 13px;
+    color: #ffffff !important;
+    position: absolute;
+	top: 9px;
+    right: 9px;
+	text-shadow: none !important;
+    content: url('images/plus.png');
+    border: 1px solid white !important;
+}
+.menu-popup li.open .ui-icon-carat-r:after{
+	background-color: rgba(0,0,0,.15);
+	background-image: none;
+	color: #fff !important;
+}
+.menu-popup li.open.active:after {
+    content: url('images/minus.png');
+	color: #fff !important;
+	border: 1px solid red !important;
+}*/
+.menu-popup li a{
+	color: #fff;
+    padding: 15px 6px;
+    font-size: 13px;
+    display: block;
+    font-weight: normal !important;
+    font-size: normal !important;
+    background:none !important;
+    text-shadow: none !important;
+    border-top: 0px !important;
+    border-bottom: 0px !important;
+}
+.menu-popup li:nth-child(1){ background: #95c45c; border-left: 6px solid rgba(0,0,0,0.3); }
+.menu-popup li:nth-child(2){ background: #6e8532; border-left: 6px solid rgba(0,0,0,0.3); }
+.menu-popup li:nth-child(3){ background: #70a114; border-left: 6px solid rgba(0,0,0,0.3); }
+.menu-popup li:nth-child(4){ background: #1bbc9b; border-left: 6px solid rgba(0,0,0,0.3); }
+.menu-popup li:nth-child(5){ background: #f67234; border-left: 6px solid rgba(0,0,0,0.3); }
+.menu-popup li:nth-child(6){ background: #697686; border-left: 6px solid rgba(0,0,0,0.3); }
+.menu-popup li:nth-child(7){ background: #3f5a9d; border-left: 6px solid rgba(0,0,0,0.3); }
+.menu-popup li:nth-child(8){ background: #87b83b; border-left: 6px solid rgba(0,0,0,0.3); }
+.menu-popup li:nth-child(9){ background: #f4ae00; border-left: 6px solid rgba(0,0,0,0.3); }
+.menu-popup li:nth-child(10){ background: #e84c3d; border-left: 6px solid rgba(0,0,0,0.3); }
+.menu-popup li:nth-child(11){ background: #565fc6; border-left: 6px solid rgba(0,0,0,0.3); }
+.menu-popup li:nth-child(12){ background: #f39d4a; border-left: 6px solid rgba(0,0,0,0.3); }
+.menu-popup li:nth-child(13){ background: #d97c24; border-left: 6px solid rgba(0,0,0,0.3); }
+.menu-popup li:nth-child(14){ background: #f39501; border-left: 6px solid rgba(0,0,0,0.3); }
+.menu-popup li:nth-child(15){ background: #c23917; border-left: 6px solid rgba(0,0,0,0.3); }
+.menu-popup li:nth-child(16){ background: #be213e; border-left: 6px solid rgba(0,0,0,0.3); }
+.menu-popup li:nth-child(17){ background: #712b37; border-left: 6px solid rgba(0,0,0,0.3); }
+
+.menu-popup li:nth-child(1):hover{ background: #709e37; border-left: 6px solid rgba(0,0,0,0.3); }
+.menu-popup li:nth-child(2):hover{ background: #4e611d; border-left: 6px solid rgba(0,0,0,0.3); }
+.menu-popup li:nth-child(3):hover{ background: #537b08; border-left: 6px solid rgba(0,0,0,0.3); }
+.menu-popup li:nth-child(4):hover{ background: #0d987b; border-left: 6px solid rgba(0,0,0,0.3); }
+.menu-popup li:nth-child(5):hover{ background: #f67234; border-left: 6px solid rgba(0,0,0,0.3); }
+.menu-popup li:nth-child(6):hover{ background: #48576a; border-left: 6px solid rgba(0,0,0,0.3); }
+.menu-popup li:nth-child(7):hover{ background: #1d387c; border-left: 6px solid rgba(0,0,0,0.3); }
+.menu-popup li:nth-child(8):hover{ background: #638f1f; border-left: 6px solid rgba(0,0,0,0.3); }
+.menu-popup li:nth-child(9):hover{ background: #c99002; border-left: 6px solid rgba(0,0,0,0.3); }
+.menu-popup li:nth-child(10):hover{ background: #c13022; border-left: 6px solid rgba(0,0,0,0.3); }
+.menu-popup li:nth-child(11):hover{ background: #2f389f; border-left: 6px solid rgba(0,0,0,0.3); }
+.menu-popup li:nth-child(12):hover{ background: #d98535; border-left: 6px solid rgba(0,0,0,0.3); }
+.menu-popup li:nth-child(13):hover{ background: #b66314; border-left: 6px solid rgba(0,0,0,0.3); }
+.menu-popup li:nth-child(14):hover{ background: #d18002; border-left: 6px solid rgba(0,0,0,0.3); }
+.menu-popup li:nth-child(15):hover{ background: #a12809; border-left: 6px solid rgba(0,0,0,0.3); }
+.menu-popup li:nth-child(16):hover{ background: #a1132d; border-left: 6px solid rgba(0,0,0,0.3); }
+.menu-popup li:nth-child(17):hover{ background: #561822; border-left: 6px solid rgba(0,0,0,0.3); }
+
+.drop{
+    display: none;
+	padding: 10px;
+	padding: 0 0 0 15px 0;
+	margin: 0px;
+}
+.drop li{
+	list-style-type:none;
+	border-bottom: 1px solid #313a43 !important;
+    background: #424d58 !important;
+}
+.drop.show{ /*display: block;*/ }
+.plus{
+	font-size: 13px;
+    color: #ffffff !important;
+    position: absolute;
+	top: 9px;
+    right: 9px;
+	text-shadow: none !important;
+    content: url('images/plus.png');
+}
+.minus{
+	font-size: 13px;
+    color: #ffffff !important;
+    position: absolute;
+	top: 9px;
+    right: 9px;
+	text-shadow: none !important;
+    content: url('images/minus.png');
+}
+
+
+</style>
+</head>
+<body>
+
+<ul class="menu-popup ui-listview" data-role="listview">
+<li class="open" id="liMenu1"><a href="#">DSR (RETAIL)<span class="plus"></span></a>
+    <ul class="drop">
+        <li onclick=" fnMenuLinkClick('1.1');"><a href="#">MTD</a></li>
+        <li onclick=" fnMenuLinkClick('1.2');"><a href="#">YTD</a></li>
+
+    </ul>
+</li>
+<li class="open" id="liMenu26"><a href="#">DSR (PROLINKS)<span class="plus"></span></a>
+    <ul class="drop">
+        <li onclick=" fnMenuLinkClick('26.1');"><a href="#">MTD</a></li>
+        <li onclick=" fnMenuLinkClick('26.2');"><a href="#">YTD</a></li>
+
+    </ul>
+</li>
+</ul>
+
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+	$('.open a').click(function(e) {
+	    e.preventDefault();
+	  
+	    var $this = $(this);
+	  	
+	    if ($this.next().hasClass('show')) {
+	        $this.next().removeClass('show');
+	        $this.next().slideUp(350);
+	        $this.find('span').removeClass('minus');
+	        console.log("hi");
+	    } else {
+	        $this.parent().parent().find('li .drop').removeClass('show');
+	        $this.parent().parent().find('li .drop').slideUp(350);
+	        $this.next().toggleClass('show');
+	        $this.next().slideToggle(350);
+	        //console.log("Hello");
+	        //$this.find('span').addClass('minus');
+	        if ($this.find('span').hasClass('minus')) {
+	        	$('.open a span').removeClass('minus');
+	        	$this.find('span').addClass('minus');
+	        	console.log("minus");
+	        } else {
+	        	$this.find('span').addClass('minus');
+	        	$('.open a span').addClass('plus');
+	        	console.log("plus");
+	        }
+
+	    }
+
+	  });
+</script>
+
+</body>
+</html>
+

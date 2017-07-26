@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<title> Welcome </title>
+		<script src="js/jquery.min.js"></script>
+		<script>
+			$(document).ready(function() {
+				$("body").on("click", ("#add"), function(){
+					console.log("add");
+					var str = '<tr id="getvalue">'+
+							  '<td>'+$("#getvalue td input").eq(0).val()+'</td>'+
+							  '<td>'+$("#getvalue td input").eq(1).val()+'</td>'+
+							  '<td>'+$("#getvalue td input").eq(2).val()+'</td>'+
+							  '<td><button class="delete" id="delete"> Delete </button> </td>'+
+							'</tr>';
+							console.log(str);
+					$("#getvalue td input").eq(0).val('');
+					$("#getvalue td input").eq(1).val('');
+					$("#getvalue td input").eq(2).val('');
+					$("body").find("tbody").before(str);
+				});
+				$("body").on("click", ("#delete"), function(){
+					console.log("delete");
+					$(this).parents("tr").remove();
+				});	
+
+			});
+		</script>
+
+	</head>
+	<body>
+	<table align="center" cellpadding="5" cellspacing="0" width="650" border="1" id="form">
+		<thead>
+			<tr>
+				<th align="left">First Name </th>
+				<th align="left">Last Name </th>
+				<th align="left">Email </th>
+				<th align="center"> Action </th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr id="getvalue">
+				<td><input type="text" value=""> </td>
+				<td><input type="text" value=""> </td>
+				<td><input type="text" value=""> </td>
+				<td><button class="add" id="add"> Add </button> </td>
+			</tr>
+		</tbody>
+	</table>
+
+	</body>
+</html>

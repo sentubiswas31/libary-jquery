@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1, user-scalable=no" />
+<title>Welcome</title>
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<style type="text/css">
+	body{
+		padding: 0px 0 0 0;
+	}
+	.lefttab li{
+		padding: 0 0 20px;
+		text-align: right;
+		cursor: pointer;
+	}
+	.iconbox{ 
+		width: 80px;
+		height: 80px;
+		margin: 0 0 0 12px;
+		border-radius: 100px;
+		background: #ccc;  
+	}
+	.iconbox1{ background: #800a0a; }
+	.iconbox2{ background: #803c0a; }
+	.iconbox3{ background: #807f0a; }
+	.iconbox4{ background: #39800a; }
+	.iconbox5{ background: #0a805b; }
+	.iconbox6{ background: #0a3980; }
+
+	.lefttab li span{
+		float: right;
+	}
+	.righttab li{
+		padding: 0 0 20px;
+		text-align: left;
+		cursor: pointer;
+	}
+	.righttab li span{
+		float: left;
+		margin: 0 12px 0 0;
+	}	
+	.middletab{
+		border: 1px solid #ccc;
+		border-radius: 8px;
+		height: 420px;
+		line-height: 30px;
+		text-align: center;
+		padding: 140px 50px 0 50px;
+	}
+	.middletab h4{
+		font-size: 36px;
+	}
+	.middletab p{
+		font-size: 21px;	
+	}
+	.header{
+		padding: 10px 0 10px 0;
+		background: #333;
+		-webkit-transition: 0.5s ease-in;
+		-moz-transition: 0.5s ease-in;
+		-o-transition: 0.5s ease-in;
+		-ms-transition: 0.5s ease-in;
+		transition: 0.5s ease-in;
+	}
+	.shrink{
+		padding: 20px 0 20px 0;
+		background: #333;
+		-webkit-transition: 0.5s ease-in;
+		-moz-transition: 0.5s ease-in;
+		-o-transition: 0.5s ease-in;
+		-ms-transition: 0.5s ease-in;
+		transition: 0.5s ease-in;
+	}
+	.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+		background: #333;
+		border-color: #333;
+	}
+	.navbar-form{ padding: 0px; margin: 0px; display: none; }
+	.navbar-nav > li {
+		padding: 0px 0;
+	}
+	.navbar-nav > li > a {
+		padding: 0 15px;
+	}
+	.navbar, .navbar-default{ height: auto; min-height: auto; margin: 0px; }
+	.navbar-brand{ height: auto; padding: 0px; margin: 0px; }
+	
+</style>
+
+    
+<style type="text/css">
+    .panel{ border: 2px dashed #a7bbcd; border-radius: 0px; box-shadow: none; }
+    .panel-title{ position: static; height: 198px; font-size: 14px; }
+    .action_container{ left: 0px; bottom: -2px; width: 100%; padding: 0; margin: 6px 0 0px 0; background: #273e54; height: 30px;  border-radius: 0 0 0 0; position: absolute; }
+    .action_container a{ float: left; color: #fff; padding: 0 5px; height: 30px; width: 33.3333%; border-right: 1px solid #3f586f; line-height: 30px; }      
+     .action_container a:last-child{ border: 0px; }  
+    .panel-heading{ padding: 10px 0 0 0; height: 198px; border-radius: 0px; } 
+    .action_link .panel-heading{ background: #dddddd; border-radius: 0px; text-align: center;  }
+    .action_link .panel-heading p{ margin-bottom: 0px; }
+    .memProf_img{ width: 90px; height: 90px; margin: 0 auto 10px auto;  border: 6px solid #fff;}
+    .action_link .panel-title{ color: #333; }
+    .panel-body1{ text-align: left; padding: 10px 0; }
+    .gapLeft0{ padding-left: 0px; }
+    .ongoing{ background: #fff; color: #333; padding: 3px 0px 6px 0; margin: 10px 10px 0 0; font-size: 14px; font-weight: bold; border-bottom: 1px dashed #ccc; }
+    #action_link{ height: 202px; }
+    </style>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+<div class="header clearfix">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  </div>
+</nav>
+
+
+<div style="height:150px;"></div>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-3"> 
+			<ul class="lefttab">
+				<li id="iconbox1">
+					<span class="iconbox iconbox1"></span>
+					<h4>left tab1</h4>
+					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 1</p>
+				</li>			
+				<li id="iconbox2">
+					<span class="iconbox"></span>
+					<h4>left tab2</h4>
+					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 2</p>
+				</li>
+				<li id="iconbox3">
+					<span class="iconbox"></span>
+					<h4>left tab3</h4>
+					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 3</p>
+				</li>
+			</ul>
+		</div>
+		<div class="col-xs-6">
+			<div class="middletab">
+				<h4>left tab1</h4>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 1</p>
+			</div>
+		</div>
+		<div class="col-xs-3">
+			<ul class="righttab">
+				<li id="iconbox4">
+					<span class="iconbox"></span>
+					<h4>left tab4</h4>
+					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+				</li>			
+				<li id="iconbox5">
+					<span class="iconbox"></span>
+					<h4>left tab5</h4>
+					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+				</li>
+				<li id="iconbox6">
+					<span class="iconbox"></span>
+					<h4>left tab6</h4>
+					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div style="height:500px;"></div>
+<script type="text/javascript">
+	$(".lefttab li").each(function(i){		
+	   //alert(i);		
+		$(this).on("click", function(j, k){
+			//alert(k);
+			var gethTxt = $(this).find("h4").text();
+			var getpTxt = $(this).find("p").text();
+
+			var iconboxId = $(this).attr("id");
+			console.log(iconboxId);
+			//alert(gethTxt+"---"+getpTxt);
+			//$(this).find("span").addClass(iconboxId);
+			$(".lefttab li, .righttab li").find("span").removeClass("iconbox1 iconbox2 iconbox3 iconbox4 iconbox5 iconbox6");
+			$(this).find("span").addClass(iconboxId);
+			$(".middletab h4").html(gethTxt);
+			$(".middletab p").html(getpTxt);
+		});
+	});
+	$(".righttab li").each(function(i){		
+	   //alert(i);		
+		$(this).on("click", function(j, k){
+			//alert(k);
+			var gethTxt = $(this).find("h4").text();
+			var getpTxt = $(this).find("p").text();
+
+			var iconboxId = $(this).attr("id");
+			console.log(iconboxId);
+			//alert(gethTxt+"---"+getpTxt);
+			//$(this).find("span").addClass(iconboxId);
+			$(".lefttab li, .righttab li").find("span").removeClass("iconbox1 iconbox2 iconbox3 iconbox4 iconbox5 iconbox6");
+			$(this).find("span").addClass(iconboxId);
+			$(".middletab h4").html(gethTxt);
+			$(".middletab p").html(getpTxt);
+		});
+	});
+
+	//menu shrink
+	$(window).scroll(function(){
+		if ($(document).scrollTop() > 70) {
+			//alert("Hello 100");
+			$(".header").addClass("shrink");
+		} else{
+			//alert("Hello 1000");
+			$(".header").removeClass("shrink");
+		};
+	});
+	
+
+</script>
+
+</body>
+</html>

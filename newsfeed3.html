@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welocme</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootst rap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/styl e.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link href='https://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+
+    <style type="text/css">
+    body{
+      background: #f6f6f6;
+    }
+    img{
+      max-width: 100%;
+      width: 100%;
+    }
+    h3, p, ul, ul li{ padding: 0px; margin: 0px; list-style-type: none;  }
+
+    .newsArea{
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+      font-family: 'Titillium Web', sans-serif;
+    }
+    .news li{
+      display: table;
+      background: #fff;
+      border-bottom: 1px solid #ededed;
+      padding: 8px 8px 2px 8px;
+      margin: 0 0 6px 0;
+    }
+    .date{
+      width: 60px;
+      height: 60px;
+      float: left;
+      text-align: center;
+      color: #fff;
+      background: url('images/iconDate.png') center top no-repeat;
+      background-size: contain;
+      margin: 8px 8px 3px 0;
+    }
+    .date span{
+      display: block;      
+    }
+    .content{      
+      padding: 0 12px 0 0;
+      margin: 0 0 0 0px;
+      position: relative;
+    }
+    .content h3{
+      margin: 0px 0 0 0px;
+      padding: 4px 0 0 0;
+    }
+    .content p{
+      padding: 5px 0 0 0;
+      font-size: 14px;
+      line-height: 18px;
+      margin: 0px 0 0 0px;
+    }    
+    .month{
+      font-size: 11px;
+      line-height: 14px;
+      padding: 5px 0 0 0;
+    }
+    .day{
+      font-size: 21px;
+      line-height: 21px;
+      font-weight: 700;
+      padding: 3px 0 0 0;
+    }
+    .year{
+      font-size: 11px;
+      font-weight: bold;
+      line-height: 13px;
+      padding: 0px 0 0 0;
+    }
+    .newsImg{
+      padding: 5px;
+      border: 1px solid #ebebeb;
+      background: #f6f6f6;
+    }
+    /*Up-right pointing*/
+    .triangle-up-right {
+        position: absolute;
+        right: -8px;
+        top: -8px;
+        width: 0;
+        height: 0;
+        border-top: 35px solid #4679bd;
+        border-left: 35px solid transparent;
+    }
+    .old{
+      border-top: 35px solid #ff0000;
+    }
+    .active{
+      width: 11px;
+      height: 11px;
+      z-index: 11;
+      top: -30px;
+      right: 4px;
+      position: absolute;
+      background: url('images/icon_active.png') center top no-repeat;
+    }    
+    .inactive{
+      background: url('images/icon_inactive.png') center top no-repeat;
+    }
+    </style>
+    <div class="newsArea">
+        <ul class="news">
+          <li>
+            <div class="date">
+              <span class="month">January</span>
+              <span class="day">27</span>              
+              <span class="year">2016</span>  
+            </div>          
+            <div class="content">
+              <div class="triangle-up-right"><span class="active"></span></div>
+              <h3>Lorem ipsum dolor sit amet, </h3>
+              <p>consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore nibh euismod tincidunt ut laoreet dolore nibh euismod tincidunt ut laoreet dolore</p>
+              <img class="newsImg" src="images/img010.jpg" />          
+            </div>            
+          </li>
+          <li>
+            <div class="date">
+              <span class="month">January</span>
+              <span class="day">27</span>              
+              <span class="year">2016</span>  
+            </div>          
+            <div class="content">
+            <div class="triangle-up-right old"><span class="active inactive"></span></div>
+              <h3>Lorem ipsum dolor sit amet, </h3>
+              <p>consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore nibh euismod tincidunt ut laoreet dolore nibh euismod tincidunt ut laoreet dolore</p>
+              <img class="newsImg" src="images/img010.jpg" />          
+            </div>            
+          </li>
+          <li>
+            <div class="date">
+              <span class="month">January</span>
+              <span class="day">27</span>              
+              <span class="year">2016</span>  
+            </div>          
+            <div class="content">
+              <div class="triangle-up-right"><span class="active"></span></div>
+              <h3>Lorem ipsum dolor sit amet, </h3>
+              <p>consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore nibh euismod tincidunt ut laoreet dolore nibh euismod tincidunt ut laoreet dolore</p>
+              <img class="newsImg" src="images/img010.jpg" />          
+            </div>            
+          </li>
+          <li>
+            <div class="date">
+              <span class="month">January</span>
+              <span class="day">27</span>              
+              <span class="year">2016</span>  
+            </div>          
+            <div class="content">
+              <div class="triangle-up-right"><span class="active"></span></div>
+              <h3>Lorem ipsum dolor sit amet, </h3>
+              <p>consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore nibh euismod tincidunt ut laoreet dolore nibh euismod tincidunt ut laoreet dolore</p>
+              <img class="newsImg" src="images/img010.jpg" />          
+            </div>            
+          </li>          
+        </ul>
+        
+
+    </div>
+
+    <!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+  </body>
+</html>
+

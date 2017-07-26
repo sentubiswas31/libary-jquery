@@ -1,0 +1,48 @@
+<!doctype html>
+<html class="">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1, user-scalable=no" />
+      
+      <title>Welcome to our site</title>
+      <link href="css/style.css" rel="stylesheet" type="text/css">      
+      <script src="js/jquery-2.1.4.min.js"></script>
+
+   </head>
+   <body>
+      <div class="gridContainer clearfix">
+         <div class="container">
+            <form>
+               <table width="100%" cellspacing="0" cellpadding="4" border="1">
+                  <tr>
+                     <th width="16%">Type of enquery </th>
+                     <th width="16%">Name </th>
+                     <th width="16%">Email address </th>
+                     <th width="16%">Message </th>
+                  </tr>
+               </table>
+               <table width="100%" cellspacing="0" cellpadding="4" border="1" id="valTb">
+                  <tr id="blankID">
+                     <td width="16%" id="type"> &nbsp; </td>
+                     <td width="16%" id="name"> &nbsp; </td>
+                     <td width="16%" id="email"> &nbsp; </td>
+                     <td width="16%" id="message"> &nbsp; </td>
+                  </tr>
+               </table>
+            </form>
+         </div>
+      </div>
+
+      <!-- include jQuery library -->
+      <script type="text/javascript">
+       disPlayData();
+         function disPlayData(){            
+            $("#type").text(localStorage.getItem("setType"));
+            $("#name").text(localStorage.getItem("setName"));
+            $("#email").text(localStorage.getItem("setEmail"));
+            $("#message").text(localStorage.getItem("setMessage"));
+         }        
+      </script>
+   
+   </body>
+</html>

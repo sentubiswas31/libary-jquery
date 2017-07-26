@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width-device-width, minimum-scale=1.0; maximum-scale=1.0"/>
+<title>Welcome</title>
+<script src="js/jquery.js"></script>
+<style>
+.highlight{
+	background: #f00;
+}
+.modalBox{
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: url("images/tr3.png");
+    z-index: 1111;
+    display: none;
+}
+.modalBoxInner{
+    color: #333;
+    padding: 5%;
+    left: 10%;
+    top: 10%;
+    width: 70%;
+    height: auto;
+    border-radius: 15px;
+    position: absolute;
+    background: #fff;
+}
+.close{
+    color: #fff !important;
+    position: absolute;
+    top: -18px;
+    right: -18px;
+    text-shadow: none;
+    opacity: 1;
+    z-index: 2;
+}
+.close:focus, .close:hover{
+    opacity: 1;
+}
+.close span{
+    color: #fff !important;
+    text-shadow: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 13px;
+    display: block;
+    text-indent: -9999px;
+    background: url("images/close_icon.png") center center no-repeat;
+    background-size: contain;
+}
+</style>
+</head>
+<body>
+
+  
+<button id="userLogInBtn" class="btn_custom btn_login">Login</button>
+<p>
+	Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+</p> 
+<p>
+	Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+</p>
+<p>
+	Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+</p>
+
+<!-- modalBox -->
+<div class="modalBox">
+   <div class="modalBoxInner">
+      <a href="javascript:void(0)" class="close" id="close"><span><img src="images/close_icon.png"></span></a>
+      <h3> Lorem ipsum dolor </h3>
+      <p>
+         Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+      </p>
+      <p>
+         Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. 
+      </p>             
+   </div>      
+</div>
+
+<script type="text/javascript">
+
+   //for modal
+   $(".btn_login").on("click", function(){         
+      //alert("Hello");
+      $(".modalBox").fadeIn(function(){
+      	$(".modalBoxInner").slideDown();
+      });
+
+   });
+   $("#close").on("click", function(){
+      $(".modalBox").fadeOut();
+   }); 
+
+</script>
+
+</body>
+</html>

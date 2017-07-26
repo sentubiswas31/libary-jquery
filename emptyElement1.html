@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome</title>
+
+
+<style type="text/css">
+	.boxRed{
+		background: #f00;
+		width: 50px;
+		height: 50px;
+		position: absolute;
+	}
+</style>
+<script type="text/javascript">
+	//alert("dfsdf");
+</script>
+</head>
+<body>
+<div class="container">
+	<div class="menu">
+		<ul>
+			<li><a class="home" href="#home">Home</a></li>
+			<li><a class="about" href="#about">About</a></li>
+			<li><a class="services" href="#services">Services</a></li>
+			<li><a class="contact" href="#contact">Contact</a></li>
+			<li><a class="home" href="#home">Home</a></li>
+			<li><a class="about" href="#about">About</a></li>
+			<li><a class="services" href="#services">Services</a></li>
+			<li><a class="contact" href="#contact">Contact</a></li>
+		</ul>
+	</div>
+	<div class="clone"></div>
+	<!--div class="boxRed"></div>
+	<pre id="original"></pre>
+	<pre id="trimmed"></pre-->
+	<button class="btnHere">Click Here</button>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+
+	$(document).ready(function(){
+
+		//remove - fucntion use
+		/*$(".btnHere").on("click", function(){
+			alert("Click");
+			var liremove = $(".menu li").remove();
+			alert(liremove);
+		});*/		
+
+		//detach - fucntion use
+		/*$(".btnHere").on("click", function(){
+			alert("Click");
+			var lidetach = $(".menu li").detach();
+			alert(lidetach);
+		});*/
+
+		//empty - fucntion use
+		/*$(".btnHere").click(function(){
+			alert("Click");
+			$(".menu").empty();
+		});*/
+
+		//trim - fucntion use
+		/*var str = "         lots of spaces before and after         ";
+		$( "#original" ).html( "Original String: '" + str + "'" );
+		$( "#trimmed" ).html( "$.trim()'ed: '" + $.trim(str) + "'" );*/
+
+		//size - fucntion use
+		/*$(".btnHere").on("click", function(){
+			alert("Click");
+			var liSize = $(".menu li").size();
+			alert(liSize);
+		});*/
+
+		//element exists or not 
+		/*$(".btnHere").on("click", function(){
+			alert("Click");
+			var liLength = $(".menu li").length;
+			//alert(liLength);
+			if(liLength > 0){
+				alert("exists");
+			}else{
+				alert("not");
+			}
+		});*/
+
+		//eq - fucntion use
+		/*$(".btnHere").on("click", function(){
+			alert("Click");
+			var lieq = $(".menu li").eq(1);
+			alert(lieq.text());
+		});*/
+
+		//get - fucntion use
+		/*$(".btnHere").on("click", function(){
+			alert("Click");
+			var liget = $(".menu li").get();
+			alert(liget);
+		});*/		
+
+		//animate - fucntion use
+		/*$(".btnHere").on("click", function(){
+			//alert("Click");
+			$(".boxRed").css('left','-200px').animate({left:200}, 600);
+		});*/
+		
+		//get - fucntion use
+		/*$(".btnHere").on("click", function(){
+			alert("Click");
+			var liget = $(".menu li").get();
+			alert(liget);
+		});*/
+
+		//clone - fucntion use
+		/*$(".btnHere").on("click", function(){
+			$(".menu li").eq(0).clone().appendTo(".clone");
+		});*/
+
+		$(".menu li").each(function(i){
+			//alert(i);
+			
+			/*$(this).on("click", function(){
+				alert("Click");
+				var getAttr = $(this).find("a").attr("class");
+				alert(getAttr);
+				$(this).find("a").attr("title", "abc");
+			});*/
+			//alert(i); 20025+18270+18286
+
+			$(this).on("click", function(){
+				alert(i+1);
+			});
+		});
+
+
+	});
+</script>
+</body>
+</html>

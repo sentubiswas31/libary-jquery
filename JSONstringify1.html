@@ -1,0 +1,97 @@
+<!doctype html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1, user-scalable=no" />
+<title>Welcome to our site</title>
+<style href="css/style.css" type="text/css"></style>
+
+</head>
+<body>
+
+
+	<script src="js/jquery.min.js"></script>
+	<SCRIPT>
+	
+	// exmp1:
+	/*var contact = new Object();
+	contact.firstname = "Jesper";
+	contact.surname = "Aaberg";
+	contact.phone = ["555-0100", "555-0120"];
+
+	var memberfilter = new Array();
+	memberfilter[0] = "surname";
+	memberfilter[1] = "phone";
+	var jsonText = JSON.stringify(contact, memberfilter, "\t");
+	document.write(jsonText);*/
+
+	// Output: 
+	// { "surname": "Aaberg", "phone": [ "555-0100", "555-0120" ] }
+
+	// exmp2: 
+	/*
+	var continents = new Array();
+	continents[0] = "Europe";
+	continents[1] = "Asia";
+	continents[2] = "Australia";
+	continents[3] = "Antarctica";
+	continents[4] = "North America";
+	continents[5] = "South America";
+	continents[6] = "Africa";
+
+	var jsonText2 = JSON.stringify(continents, replaceToUpper);
+
+	function replaceToUpper(key, value) {
+	    return value.toString().toUpperCase();
+	}
+	document.write(jsonText2);*/
+	//Output:
+	// "EUROPE,ASIA,AUSTRALIA,ANTARCTICA,NORTH AMERICA,SOUTH AMERICA,AFRICA"
+
+	// exmp3: 
+	/*var contact = new Object(); 
+	contact.firstname = "Jesper";
+	contact.surname = "Aaberg";
+	contact.phone = ["555-0100", "555-0120"];
+
+	contact.toJSON = function(key)
+	 {
+	    var replacement = new Object();
+	    for (var val in this)
+	    {
+	       if (typeof (this[val]) === 'string')
+	         replacement[val] = this[val].toUpperCase();
+	       else
+	         replacement[val] = this[val]
+	    }
+	    return replacement;
+	};
+
+	var jsonText = JSON.stringify(contact);
+	document.write(jsonText);*/
+
+	// Output:
+	//{"firstname":"JESPER","surname":"AABERG","phone":["555-0100","555-0120"]}
+	//'{"firstname":"JESPER","surname":"AABERG","phone":["555-0100","555-0120"]}'
+
+	// exmp4: 
+	var arr = ["a", "b", "c"];
+	var str = JSON.stringify(arr);
+	document.write(str);
+	document.write ("<br/>");
+
+	var newArr = JSON.parse(str);
+
+	while (newArr.length > 0) {
+	    document.write(newArr.pop() + "<br/>");
+	}
+
+	// Output:
+	// ["a","b","c"]
+	// c
+	// b
+	// a
+
+	</SCRIPT>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<!--Created using jsbin.com
+  Source can be edited via http://jsbin.com/ejiseg/2/edit -->
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script src="js/jquery.js"></script>
+<meta charset="utf-8">
+<title>Welcome</title>
+
+<style>
+	.main{
+		width: 450px;
+		height: auto;
+		margin: 0 auto;
+	}
+	#thumbs{
+		padding: 0px;
+		margin: 0px;
+	}	
+	li {padding:0px; display:inline-block; width: 60px; height: 40px;}
+	img {display:block; max-width: 100%;}
+	.clicked{border: 3px solid red; }
+	#panel img{position:absolute; width: 318px; }
+	.ajax_loader{ }
+	
+</style>
+
+<script>
+
+$(document).ready(function(){
+$(".ajax_loader").css({
+		position: 'absolute',
+		top: '45%',
+		left: '45%',
+		width: '50px',
+		height: '50px;'
+});
+setTimeout(function(){
+$(".main").css({display: 'block'});
+//Hide all images but not the first one
+$("#panel img").not(':first').hide();
+
+$("#thumbs li").click(function(i){
+	//alert(i);
+    getIndex = $(this).index();
+	//alert(getIndex);
+    $("#thumbs .clicked").removeClass('clicked');
+    $("#panel img").fadeOut('fast').eq(getIndex).fadeIn();  
+    $(this).addClass('clicked');     
+});
+$(".ajax_loader").hide();
+
+},1000);
+
+});
+
+</script>
+
+</head>
+<body>
+<div class="ajax_loader"><img src="images/ajax_loader_big.gif"></div>
+
+<div class="main" style="display:none;">
+<ul id="thumbs">
+    <li><img id="img1" data-full="images/messi1.jpg" src="images/messi1.jpg"></li>
+    <li><img id="img2" data-full="images/messi2.jpg" src="images/messi2.jpg"></li>
+	<li><img id="img3" data-full="images/messi2.jpg" src="images/messi3.jpg"></li>
+	<li><img id="img4" data-full="images/messi2.jpg" src="images/messi4.jpg"></li>
+	<li><img id="img5" data-full="images/messi2.jpg" src="images/messi5.jpg"></li>
+</ul>
+
+<div id="panel">
+    <img src="images/messi1.jpg">
+    <img src="images/messi2.jpg">
+	<img src="images/messi3.jpg">
+	<img src="images/messi4.jpg">
+	<img src="images/messi5.jpg">
+</div>
+
+<!--ul id="thumbs">
+    <li><img data-full="http://farm9.staticflickr.com/8302/7869719644_d24854d38b_z.jpg" src="http://farm9.staticflickr.com/8302/7869719644_d24854d38b_t.jpg"></li>
+    <li><img data-full="http://farm9.staticflickr.com/8295/7844351538_2c238bd80a_z.jpg" src="http://farm9.staticflickr.com/8295/7844351538_2c238bd80a_t.jpg"></li>
+</ul>
+
+<div id="panel">
+    <img width="300" height="200" src="http://farm9.staticflickr.com/8302/7869719644_d24854d38b_z.jpg">
+    <img width="300" height="200" src="http://farm9.staticflickr.com/8295/7844351538_2c238bd80a_z.jpg">
+</div-->
+
+</div>
+</body>
+</html>

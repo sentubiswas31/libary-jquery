@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<title> Welcome </title>
+		<script src="http://code.jquery.com/jquery-1.5.1.min.js"></script>
+		<script>
+		$(document).ready(function(){
+			var id = 0;
+			
+			// Add button functionality
+			$(".dynatable .add").click(function(){
+				id++;
+				var master = $(this).parents(".dynatable");
+				// Get a new row based on the prototype row
+				var prot = master.find(".prototype").clone();
+				prot.attr("class", "");
+				prot.find(".id").attr("value", id);
+				master.find("tbody").append(prot);
+			});
+			
+			// Remove button functionality
+			$("table.dynatable button.remove").live("click", function() {
+				$(this).parents("tr").remove();
+			});
+		});
+		</script>		
+	</head>
+	
+	<body>
+	<table class="dynatable" width="750" align="center">
+		<thead>
+			<tr>
+				<th align="left">ID </th>
+				<th align="left">Name </th>
+				<th align="left">Col 3 </th>
+				<th align="left">Col 4 </th>
+				<th align="center"><button class="add">Add </button></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class="prototype">
+				<td><input type="text" name="id[]" value="0" class="id" /></td>
+				<td><input type="text" name="name[]" value="" /></td>
+				<td><input type="text" name="col4[]" value="" /></td>
+				<td><input type="text" name="col3[]" value="" /></td>
+				<td><button class="remove">Remove</button></td>
+			</tr>
+		</tbody>
+	</table>
+	</body>
+</html>

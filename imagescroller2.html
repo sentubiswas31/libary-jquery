@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <title>Welcome to our site</title>
+      <script src="js/jquery.js"></script>
+      <style>
+         .main{
+         width: 960px;
+         margin: 0 auto;
+         }
+         #slider{ width:600px; margin:100px auto 0; overflow:hidden; position:relative; height:300px; }
+         #slider_img{ width:2400px; position:absolute; left:0; }
+         #slider_img li{float:left; list-style:none;}
+         *{margin:0; padding:0;}
+         .controls{width:600px; margin:0 auto; padding:20px 0 0;}
+         .controls button{padding:20px;}
+      </style>
+      <script>
+         $(document).ready(function(e) {
+         var sliderIMG = $('#slider_img').find('img').width(),
+             off = $('#slider_img').position().left,
+             sliderLen = $('#slider_img li').length,
+             slidrWidth = sliderIMG * sliderLen,
+             slidrWidthLast = slidrWidth - sliderIMG;
+             count = 0;
+             //alert(off);
+             console.log(slidrWidthLast);
+
+         //$('#slider_img').width(slidrWidth);
+         //alert(sss);
+
+         $('#next').click(function(){
+             count++;
+             if(count < sliderLen)
+                 {
+                  $('#slider_img').animate({
+                    left: '-=' + sliderIMG + 'px'                   
+                    }, 500, function() {
+                    });         
+                 }
+                 if(count >= sliderLen)
+                 {         
+                 $('#slider_img').animate({                 
+                    left: '0px'                 
+                   }, 500, function() {
+                   });
+                  count = 0;
+                 }       
+             })
+
+            $('#prev').click(function(){
+              //alert("adasd");
+             count--;
+             if(count < sliderLen)
+                 {
+                  $('#slider_img').animate({
+                    right: '+=' + sliderIMG + 'px'                   
+                    }, 500, function() {
+                    });         
+                 }
+                 if(count >= sliderLen)
+                 {         
+                 $('#slider_img').animate({                 
+                    right: '0px'                 
+                   }, 500, function() {
+                   });
+                  count = 0;
+                 }       
+             })
+         });
+         
+      </script>
+   </head>
+   <body>
+      <div class="main">
+         
+         <div id="slider">
+            <ul id="slider_img">
+               <li><img src="images/1.jpg" width="600" height="300" /></li>
+               <li><img src="images/2.jpg" width="600" height="300" /></li>
+               <li><img src="images/3.jpg" width="600" height="300" /></li>
+               <li><img src="images/4.jpg" width="600" height="300" /></li>
+            </ul>
+         </div>
+         <div class="controls"> 
+            <button id="prev">Prev</button>
+            <button id="next">Next</button>       
+         </div>
+      </div>
+      
+   </body>

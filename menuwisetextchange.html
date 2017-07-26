@@ -1,0 +1,89 @@
+<!doctype html>
+<html class="">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1, user-scalable=no" />
+<title>Welcome to our site</title>
+<script src="js/jquery.js"></script>
+<style type="text/css">
+  .container{
+    width: 800px;
+    height: auto;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+  }
+  .heading{
+    color: #fff;
+    background: #039b88;
+    padding: 0 0 0 15px;
+    margin: 0px;
+    height: 50px;
+    font-size: 24px;
+    line-height: 50px;
+  }
+  .menu{
+    margin: 0px;
+    padding: 0px;
+  }
+  .menu li{
+    padding: 5px 0 5px 15px;    
+    height: 100px;
+    list-style-type: none;
+    font: normal 18px/100px arial;
+    background: #d5d5d5;
+    border-bottom: 1px solid #fff;
+  }
+  .menu li:hover{ background: #007768; }
+  .menu li span{
+    float: left;
+    margin: 0 15px 0 0;
+    width: 99px;
+    height: 100px;    
+    display: inline-block;
+    background: url("images/category_icons.png") 0 0 no-repeat;
+  }
+  .menu li span.icon1{ background-position: 0 0; }
+  .menu li span.icon2{ background-position: -99px 0; }
+  .menu li span.icon3{ background-position: -198px 0; }
+  .menu li span.icon4{ background-position: -297px 0; }
+  .menu li span.icon5{ background-position: -396px 0; }
+  .menu li span.icon6{ background-position: -495px 0; }
+  .menu li span.icon7{ background-position: -594px 0; }
+  .menu li span.icon8{ background-position: -693px 0; }
+
+  .menu li:hover span.icon1{ background-position: 0 -99px; }
+  .menu li:hover span.icon2{ background-position: -99px -99px;; }
+  .menu li:hover span.icon3{ background-position: -198px -99px;; }
+  .menu li:hover span.icon4{ background-position: -297px -99px;; }
+  .menu li:hover span.icon5{ background-position: -396px -99px;; }
+  .menu li:hover span.icon6{ background-position: -495px -99px;; }
+  .menu li:hover span.icon7{ background-position: -594px -99px;; }
+  .menu li:hover span.icon8{ background-position: -693px -99px;; }
+
+
+</style>
+</head>
+<body>
+<div class="container">
+    <p class="heading">Menu1</p>
+    <ul class="menu">
+      <li><span class="icon1"></span> Menu1</li>
+      <li><span class="icon2"></span> Menu2</li>
+      <li><span class="icon3"></span> Menu3</li>
+      <li><span class="icon4"></span> Menu4</li>
+      <li><span class="icon5"></span> Menu5</li>
+      <li><span class="icon6"></span> Menu6</li>
+      <li><span class="icon7"></span> Menu7</li>
+      <li><span class="icon8"></span> Menu8</li>
+    </ul>
+
+    <script type="text/javascript">
+    $(".menu li").on("click", function(){
+      var gettxt = $(this).text();
+      //alert(gettxt);
+      $(".heading").html(gettxt);
+    });
+    </script>
+</div>
+</body>
+</html>

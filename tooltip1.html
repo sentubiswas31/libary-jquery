@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<!--Created using jsbin.com
+  Source can be edited via http://jsbin.com/ejiseg/2/edit -->
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+<script src="js/jquery.js"></script>
+<meta charset="utf-8">
+<title>Welcome</title>
+<style>
+body{
+	margin: 0px;
+	padding: 0px;
+	font-family: arial;
+}
+.selected{
+	color: #fff;
+	background: #f00;
+}
+ul{
+	padding: 0px;
+	margin: 0px;
+}
+ul li{
+	padding: 0px;
+	margin: 0px;
+	list-style-type: none;
+}
+.mainPage{
+	width: 630px;
+	margin: 0 auto; 
+}
+.subMenu2{
+	border: 1px solid red;
+}	
+.subMenu2 li{
+	width: 240px;
+	padding: 15px;
+	float: left;
+	margin: 20px;
+	background: #E6E6E6;
+	border-radius: 10px;
+	border: 2px solid #CFCFCF;
+	position: relative;
+}	
+.subMenu2 li span{
+	width: 200px;
+	height: 54px;
+	color: #fff;
+	padding: 10px;
+	display: none;
+	position: absolute;
+	right: -226px;
+	top: 25px;
+	border-radius: 4px;
+	background: #2E2E2E;
+	border-radius: 6px;
+	border: 2px solid #2E2E2E;
+	z-index: 1;
+}
+.clear{
+	clear: both;
+	height: 0px;
+}
+</style>
+
+</head>
+<body>
+<script>
+$(document).ready(function(){	
+	$(".subMenu2 li").each(function(i){
+		//alert(i);
+		$(this).on("mouseover", function(){
+			//alert("mouseOver");
+			//var valText = $(this).find("span").text();
+			//alert($(this).find("span").text());
+			$(".subMenu2 li").find("span").css({"display":"none"});
+			$(this).find("span").show().css('right','0px').animate({top:20}, 100);
+		})
+		$(this).on("mouseout", function(){
+			$(".subMenu2 li").find("span").css({"display":"none"});
+		});
+	});
+});
+</script>
+<div class="mainPage">
+<ul class="subMenu2">		
+	<li>
+		sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip
+		<span>1. nibh euismod tincidunt ut laoreet dolore magna aliquam</span>
+	</li>
+	<li>
+		sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip
+		<span>2. nibh euismod tincidunt ut laoreet dolore magna aliquam</span>
+	</li>
+	<li>
+		sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip
+		<span>3. nibh euismod tincidunt ut laoreet dolore magna aliquam</span>
+	</li>
+	<li>
+		sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip
+		<span>4. nibh euismod tincidunt ut laoreet dolore magna aliquam</span>
+	</li>
+   <div class="clear"></div>	
+</ul>
+
+</div>	
+
+</div>
+</body>
+</html>

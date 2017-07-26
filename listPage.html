@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <script src="js/jquery.min.js"></script>
+      <script src="js/turn.min.js"></script>
+      <style type="text/css">
+      body{
+        color: #373737;
+        margin: 0px;
+        padding: 0px;
+        font-weight: normal;
+        font-size: 14px;
+        font-family: 'sans-serif', arial;
+      }
+      a{ color: #373737; }
+      ul{
+        padding: 0px;
+        margin: 0px;
+      }
+      ul li{
+        padding: 0px;
+        margin: 0px;
+        list-style-type: none;
+      }
+      .content-block-title{
+        color: #fff;
+        padding: 10px 12px;
+        background: #0085c3;
+      }
+      .list-block ul{        
+        background: #fff;
+        border-radius: 3px;
+      }
+      .item-content{        
+        border-bottom: 1px solid #fff;
+      }
+      .item-inner{ 
+        display: table;
+        background: #efefef;
+        width: 100%;
+        padding: 12px 0;
+      }
+      .item-title{
+        width: 45%;
+        float: left;
+        font-weight: 500;
+        padding: 0 0 0 12px;
+      }
+      .item-after{
+        width: 45%;
+        float: left;
+        text-align: right;
+        padding: 0 6px 0 12px;
+        word-break: break-all;
+      }
+      .list-block-label{
+        text-align: center;
+        font-size: 12px;
+        padding: 6px 15px;
+        background: #dedcdc;
+      }
+      </style>
+   </head>
+   <body onload="displayImage()">
+      <div class="page-content">
+         <div class="content-block-title">App overview</div>
+         <div class="list-block tablet-inset">
+            <ul>
+               <li class="item-content">
+                  <div class="item-inner">
+                     <div class="item-title">Protecton App</div>
+                     <div class="app-icon ios7" style="background-image: url('https://a1.files.diawi.com/app-icon/IqWm273Ew9SFO9FmlEFD.png');">
+                        <div class="gloss"></div>
+                     </div>
+                  </div>
+               </li>
+               <li class="item-content">
+                  <div class="item-inner">
+                     <div class="item-title">Version</div>
+                     <div class="item-after">2</div>
+                  </div>
+               </li>
+               <li class="item-content">
+                  <div class="item-inner">
+                     <div class="item-title">Build</div>
+                     <div class="item-after">2</div>
+                  </div>
+               </li>               
+            </ul>
+         </div>
+         <div class="content-block-title">Download</div>
+         <div class="list-block tablet-inset">
+            <ul>
+               <li>
+                  <a class="item-link item-content external" href="https://a1.files.diawi.com/app-file/IqWm273Ew9SFO9FmlEFD.ipa">
+                     <div class="item-media"><i class="icomoon-download"></i></div>
+                     <div class="item-inner">
+                        <div class="item-title">Download application</div>
+                     </div>
+                  </a>
+               </li>
+            </ul>
+            <div class="list-block-label">Open this page in Safari on your iOS device to be able to install the app</div>
+         </div>
+         <div class="content-block-title">App details</div>
+         <div class="list-block tablet-inset">
+            <ul>
+               <li class="item-content">
+                  <div class="item-inner long">
+                     <div class="item-title">Bundle identifier</div>
+                     <div class="item-after"><span class="sizeadjust">com.berger.app.protecton</span></div>
+                  </div>
+               </li>
+               <li class="item-content">
+                  <div class="item-inner">
+                     <div class="item-title">Size</div>
+                     <div class="item-after">16.62 MB</div>
+                  </div>
+               </li>
+               <li class="item-content">
+                  <div class="item-inner ">
+                     <div class="item-title">Minimum iOS version</div>
+                     <div class="item-after">6.0</div>
+                  </div>
+               </li>
+               <li class="item-content">
+                  <div class="item-inner ">
+                     <div class="item-title">Device family</div>
+                     <div class="item-after">
+                        iPhone, iPad
+                     </div>
+                  </div>
+               </li>
+               <li class="item-content">
+                  <div class="item-inner long ">
+                     <div class="item-title">Supported architectures</div>
+                     <div class="item-after">armv7, arm64</div>
+                  </div>
+               </li>
+            </ul>
+         </div>
+         <div class="content-block-title">Provisioning profile</div>
+         <div class="list-block tablet-inset">
+            <ul>
+               <li class="item-content">
+                  <div class="item-inner">
+                     <div class="item-title">Profile type</div>
+                     <div class="item-after">Ad Hoc</div>
+                  </div>
+               </li>
+               <li class="item-content">
+                  <div class="item-inner long ">
+                     <div class="item-title">Profile expiration</div>
+                     <div class="item-after">2017-02-07 10:11:47 UTC</div>
+                  </div>
+               </li>
+               <li class="accordion-item">
+                  <a href="#" class="item-content item-link">
+                     <div class="item-inner ">
+                        <div class="item-title">Provisioned devices</div>
+                        <div class="item-after"><span class="badge">1</span></div>
+                     </div>
+                  </a>                  
+               </li>
+            </ul>
+            <div class="list-block-label">
+               Diawi can detect if your device's UDID is provisioned in this app: identify your device from the <a href="/device">device page</a>.
+            </div>
+         </div>
+         <div class="content-block-title">Other information</div>
+         <div class="list-block tablet-inset">
+            <ul>
+               <li class="item-content">
+                  <div class="item-inner long">
+                     <div class="item-title">Uploaded</div>
+                     <div class="item-after">2016-06-20 12:59:17 UTC</div>
+                  </div>
+               </li>
+            </ul>
+         </div>
+         <div class="content-block-title">Help</div>
+         <div class="list-block tablet-inset">
+            <ul>
+               <li class="item-content">
+                  <a class="item-link item-content" href="#installation-issues">
+                     <div class="item-inner">
+                        <div class="item-title">Most common installation issues</div>
+                        <div class="item-after">12</div>
+                     </div>
+                  </a>
+               </li>
+               <li class="item-content">
+                  <a class="item-link item-content" href="/help">
+                     <div class="item-inner">
+                        <div class="item-title">Get more help</div>
+                        <div class="item-after">55</div>
+                     </div>
+                  </a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </body>
+</html>
+
+
+

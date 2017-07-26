@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<!--Created using jsbin.com
+  Source can be edited via http://jsbin.com/ejiseg/2/edit -->
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+<script src="js/jquery.js"></script>
+<meta charset="utf-8">
+<title>Welcome</title>
+<style>
+body{
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+}
+.selected{
+	color: #fff;
+	background: #f00;
+}
+.subMenu2{
+	width: 120px;
+	border: 1px solid red;
+}	
+.subMenu2 li{
+	padding: 5px 0;
+}
+.subMenu2 li a{
+	position: relative;
+	padding: 10px 0;
+}	
+.subMenu2 li a span{
+	background: #f00;
+	width: 40px;
+	height: 18px;
+	color: #fff;
+	padding: 5px 8px;
+	display: none;
+	position: absolute;
+	right: -50px;
+	top: -15px;
+	border-radius: 4px;
+}
+</style>
+
+</head>
+<body>
+	
+<script>
+$(document).ready(function(){	
+	$(".myMenu li").find('ul li').each(function(e){
+		$(this).click(function(){
+		  $(this).addClass('selected').siblings().removeClass('selected');
+		});
+	});
+});
+</script>
+
+<script>
+$(document).ready(function(){	
+	$(".subMenu2 li a").each(function(){
+	   $(this).on('mouseover', function(){
+		   $(this).find('span').css({
+			 'display':'block'
+		   });
+	   });
+	   $(this).on('mouseout', function(){
+		   $(this).find('span').css({
+			 'display':'none'
+		   });
+	   });
+	});
+});
+</script>
+
+<ul class="subMenu2">		
+	<li><a href="#">menu item 1 <span>Hello1</span></a></li>
+	<li><a href="#">menu item 1 <span>Hello2</span></a></li>	
+	<li><a href="#">menu item 1 <span>Hello3</span></a></li>	
+	<li><a href="#">menu item 1 <span>Hello4</span></a></li>	
+</ul>
+	
+<div id="popup">
+	<ul class="myMenu">		
+		<li id="menu1"><a href="#">menu item 1</a></li>
+		<li id="menu1"><a href="#">menu item 1</a>
+			<ul class="subMenu">		
+				<li><a href="#">menu item 1 <span>Hello1</span></a></li>
+				<li><a href="#">menu item 1 <span>Hello1</span></a></li>	
+				<li><a href="#">menu item 1 <span>Hello1</span></a></li>	
+				<li><a href="#">menu item 1 <span>Hello1</span></a></li>	
+			</ul>
+		</li>	
+		<li id="menu1"><a href="#">menu item 1</a></li>	
+		<li id="menu1"><a href="#">menu item 1</a></li>	
+	</ul>
+</div>
+
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Web SQL Database Example</title>
+  <script src="js/jquery.min.js"></script>
+  <script>
+
+     var db = window.openDatabase('studentInfo', '1.0', 'Studnet Information', 200000);
+     db.transaction(populateTable, error, success);
+     
+     function populateTable(tx) {
+      //alert("populateTable");
+      //tx.executeSql('CREATE TABLE IF NOT EXISTS studentList (name, email, phone)');
+      tx.executeSql('CREATE TABLE IF NOT EXISTS studentInfoTab(id integer primary key autoincrement, name, email, phone)');
+     }
+     function error(error) {
+        //alert("Got an error " +error);
+        console.log("Got an error " +error);
+     }
+     function success() {        
+        //alert("Table create successfully");
+        console.log("success");
+     }     
+
+     function addContact() {
+        var name  = $('#name').val();
+        var email = $('#email').val();
+        var phone = $('#phone').val();
+
+        //alert(name+'---'+email+'----'+phone);
+
+        var db = window.openDatabase('studentInfo', '1.0', 'Studnet Information', 200000);
+        db.transaction(function(tx) {
+          tx.executeSql("INSERT INTO studentInfoTab (name, email, phone) VALUES ('"+name+"', '"+email+"','"+phone+"')");
+        }, error, success);
+        function error(error) {
+          //alert("Transaction fail "+ error);
+          console.log("Transaction fail "+ error);         
+        } 
+        function success() {
+          //alert("Transaction success "); 
+          console.log("Transaction success ");
+          studentList();
+          location.reload();
+        } 
+      }
+
+    function studentList() {
+      //alert("studentList");
+      var db = window.openDatabase('studentInfo', '1.0', 'Studnet Information', 200000);
+      db.transaction(function(tx) {
+        tx.executeSql("SELECT * FROM studentInfoTab", [], successStdSqlList, error);
+        function successStdSqlList(tx, results) {
+        var len = results.rows.length;
+        //alert(len);
+        for (var i = 0; i <len; i++) {
+          //alert(results.rows.item(i).rowid);
+          var tbStr = "";
+          tbStr+= 
+            '<tr>'+
+              '<td>'+results.rows.item(i).id+'</td>'+
+              '<td>'+results.rows.item(i).name+'</td>'+
+              '<td>'+results.rows.item(i).email+'</td>'+
+              '<td>'+results.rows.item(i).phone+'</td>'+
+              '<td><button onclick="deleteItem('+results.rows.item(i).id+')">Delete</button></td>'+
+            '</tr>';
+           $("#contacts").append(tbStr);
+        };
+      }
+    }, error, success);
+  }
+
+  function deleteItem(e) {
+    //alert("deleteItem");
+    //alert(e);
+    var id = e;
+    //alert(id);
+
+    var db = window.openDatabase('studentInfo', '1.0', 'Studnet Information', 200000);
+    db.transaction(function(tx) {
+      //alert("transaction");
+      tx.executeSql('DELETE FROM studentInfoTab WHERE id=?', [id], successDelete, error)
+      function successDelete() {
+        //alert("studentList");
+        studentList();
+        location.reload();
+      }    
+    }, error, success);
+  }
+  studentList();
+        
+  </script>    
+
+</head>
+<body>
+  <div id="container">
+    <section id="input">
+      <h1>Add Contacts</h1>
+      <label>Firstname: <input type="text" name="firstname" id="name" /></label>
+      <label>Lastname: <input type="text" name="lastname" id="email" /></label>
+      <label>Phone number: <input type="tel" name="phonenumber" id="phone" /></label>
+      <button onclick="addContact()">Add</button>
+    </section>
+    <section id="output">
+      <h1>View Contacts</h1>
+      <table id="contacts" border="1" cellspacing="0" style="width:100%">
+        <tr>
+          <th>Id</th>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>Phonenumber</th>
+          <th>Action</th>
+        </tr>      
+      </table>
+      <!--table id="contacts" border="1" cellspacing="0" style="width:100%">       
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table-->
+    </section>
+  </div>
+</body>
+</html>

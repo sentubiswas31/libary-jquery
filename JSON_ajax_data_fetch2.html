@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Welcome</title>
+
+<script src="js/jquery.js"></script>
+
+
+<script type="text/javascript" language="javascript">
+
+//https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA
+
+$(document).ready(function(){
+/*
+$.ajax({
+	type: "GET",		
+	url: 'https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA',
+	success: function (sentu) {
+		var data = sentu.results[0].address_components;
+	  var eachli = '';
+	  //alert(data.length);
+	  for(j=0; j<data.length; j++){		
+		eachli += "<li>" +data[j].long_name+"<br/>"+data[j].types[0] + "</li>";		
+	  }
+	  $(".gamesList").append(eachli);
+	  $(".gamesList").listview("refresh");
+	},
+	error:function(xhr, ajaxOptions, thrownError){
+		alert('Error '+JSON.stringify(thrownError)) ;
+	 }	
+});
+*/
+
+$.ajax({
+	type     : "GET",
+	url      : "https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA",
+	dataType : "json",
+	success  : function(sentu){
+		var getData = sentu.results[0].address_components;
+		//alert(getData.length);
+		for (var i = 0; i < getData.length; i++) {
+			//Things[i]
+			var listItem = sentu.results[0].address_components[i].long_name;
+			$(".gamesList").html(listItem);
+		};
+	},
+	error    : function(xhr, ajaxOptions, thrownError){
+		alert("Error" + thrownError);
+	}
+});
+
+/* $.getJSON('https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA', function(sentu){
+	//alert(sentu.results[0].address_components.length);
+	var data = sentu.results[0].address_components;
+	for (var i = 0; i < data.length; i++) {
+		var eachli = "<li>"+data[i].types[0]+"</li>";
+		$(".gamesList").append(eachli);
+	};	
+	
+	$(".gamesList").listview("refresh");
+}); */
+
+/* $.getJSON('http://www.kipiko.com/getData.php?mode=snapshotCityList&langId=1&langCode=en&page=landing', function(sentu){
+	alert(sentu.length);
+	var eachli = '';
+	for(j=0; j<sentu.length; j++){		
+	eachli += "<li>" +sentu[j].city_name + "</li>";
+	console.log("<li>" +sentu[j].city_name + "</li>");
+	$(".gamesList").append(eachli);
+  };
+  $(".gamesList").listview("refresh");
+}); */
+
+/* $.ajax({
+	type: "GET",		
+	url: 'http://www.kipiko.com/getData.php?mode=snapshotCityList&langId=1&langCode=en&page=landing',			
+	dataType:"json",
+	success: function (city) {
+	  for(j=0; j<city.length; j++){				  
+	      var links = "<li id ='" + city[j].city_name + "'><a href='#'>" + city[j].city_name +  "</a></li>";
+		  $(".gamesList").append(links);  
+		 }
+	   $(".gamesList").listview("refresh");
+	 },
+   error: function (xhr, ajaxOptions, thrownError) {
+  }
+});
+
+$.ajax({
+	type: "GET",		
+	url: 'http://kipiko.com/iphone.php?mode=userPurchaseList&user_id=1&device_id=123&langCode=en',			
+	dataType:"json",	
+	
+	success: function (details) {
+		var detailsText=new Array();
+	    for(i=0; i<details.purchaseGuideList.length; i++){	
+		  var json={};			  
+		  json.name=details.purchaseGuideList[i].city_name;
+		  json.lat=details.purchaseGuideList[i].latitude;
+		  json.long=details.purchaseGuideList[i].longitude;
+		  detailsText.push(json);
+		}	
+		
+	  	alert(detailsText);
+	
+		$(".gamesList li").click(function(){
+			var hitid=this.id;
+			$.each(detailsText, function(key, value) {
+				if(value.name==hitid){
+				   //alert(value.lat+'=='+value.long);
+				   $("#contentText2").html(value.lat+'=='+value.long);
+				}
+			});    
+		});
+	  },	  
+    error: function (xhr, ajaxOptions, thrownError){
+   alert("error");
+  }  
+});
+*/
+ 	
+});
+</script>
+
+</head>
+
+<body>
+
+<div id="result">
+  <ul class="gamesList" data-type="horizontal" data-role="listview">
+    <!-- <li><a href="#content">sfdfs ff fsdfdsf</a></li> -->
+  </ul>
+</div>   
+
+</body>
+</html>

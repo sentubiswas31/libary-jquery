@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Welcome to our site</title>
+<script src="js/jquery.js"></script>
+
+<style>
+
+.eachcontent{
+	width: 750px;
+	height: auto;
+	margin: 0 auto 15px auto;
+	font: normal 13px arial;
+}
+.eachcontent h4{
+	background: #eee;
+	padding:4px 10px;
+	margin: 0px;
+	cursor: pointer;
+}
+.eachcontent p{	
+	padding:4px 10px;
+	margin: 0px;
+}
+
+</style>
+
+<script>
+$(document).ready(function() {
+	
+	$(".eachcontent h4").each(function(e){
+		//alert(e);
+		$(this).click(function(){
+			//alert("h4");
+			$("p").each(function(i){
+				//alert(i);
+				if(e==i){
+					//alert(e==i);
+					//$(this).css({display:"block"});
+					$(this).slideDown();
+				}else{
+					//$(this).css({display:"none"});	
+					$(this).slideUp();				
+				}
+			});			
+		});
+	});	
+   
+});
+</script>
+
+</head>
+<body>
+	<div class="eachcontent">
+		<h4>This program is free software;</h4>
+		<p style="display: block;">you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.</p>
+	</div>
+	<div class="eachcontent"> <h4>This program is free software;</h4>
+		<p style="display: none;">you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. Foundation; either version 2 of the License, or (at your option) any later version.</p>
+	</div>
+	<div class="eachcontent">
+		<h4>This program is free software;</h4>
+		<p style="display: none;">you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.</p>
+	</div>
+	<div class="eachcontent">
+		<h4>This program is free software;</h4>
+		<p style="display: none;">you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.Software Foundation; either version 2 of the License, or (at your option) any later version.</p>
+	</div>
+	<div class="eachcontent">
+		<h4>This program is free software;</h4>
+		<p style="display: none;">you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. either version 2 of the License, or (at your option) any later version.</p>
+	</div>
+</body>
+
+

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+<link href="css/sidemenu.css" rel="stylesheet">
+<script src="js/jquery.js"></script>
+<meta charset="utf-8">
+<title>Welcome</title>
+
+</head>
+<body>
+<div class="page">
+<div id="sidebar">
+	<ul class="myMenu">		
+		<li class="sideLogo">Logo Here </li>
+		<li><a href="#">Menu item 1</a></li>
+		<li><a href="#">Menu item 4</a></li> 
+		<li><a href="#">Menu item 5</a></li>
+		<li><a href="#">Menu item 6</a></li> 
+		<li><a href="#">Menu item 7</a></li> 		
+	</ul>
+</div>
+<div class="contentArea">
+	<div class="header">
+		<div id="settings" class="off" onclick="slideMenu()">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		Header
+	 </div>
+	<div class="content">
+		Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+	</div> 
+</div>
+</div>
+
+<script>
+$("document").ready(function(){  
+   
+	/* For Slide menu */
+	$("#settings").on('click', function(){
+		var winWidth = $(window).width();
+		//alert(winWidth);
+		$(".page").width(winWidth);
+		$(".page").css('overflow','hidden');
+		if (!$(this).hasClass("on")) {
+			//alert("off");
+			$(this).removeClass("off");
+			$(this).addClass("on");
+			$("#sidebar").show().css('left','-50%').animate({left:0}, 200);
+	    	$(".contentArea").css('margin-left','0').animate({ left: "50%" }, 200);
+		}else if(!$(this).hasClass("off")){
+			//alert("on");
+			$(this).removeClass("on");
+			$(this).addClass("off");
+			$("#sidebar").css('left','0%').animate({left:"-50%"}, 200);
+	    	$(".contentArea").css('margin-left','0').animate({ left: "0%" }, 200);
+		}
+	});
+
+	$(".content").on("click", function(){
+		if(!$("#settings").hasClass("off")){
+		//alert("Hello")
+		$("#settings").removeClass("on");
+		$("#settings").addClass("off");
+		$("#sidebar").css('left','0%').animate({left:"-50%"}, 200);
+    	$(".contentArea").css('margin-left','0').animate({ left: "0%" }, 200);
+		}		
+	});
+	
+});
+</script>
+
+</body>
+</html>

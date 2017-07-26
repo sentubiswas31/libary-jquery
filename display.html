@@ -1,0 +1,49 @@
+<!DOCTYPE>
+<html>
+<head>
+<title>Welcome</title>
+
+<!--<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="jquery-mobile/jquery-1.6.4.js" type="text/javascript"></script>
+<script src="jquery-mobile/jquery.mobile-1.0.min.js" type="text/javascript"></script>
+<link href="jquery-mobile/jquery.mobile-1.0.min.css" rel="stylesheet" type="text/css" />
+<link href="jquery-mobile/jquery.mobile.structure-1.0.min.css" rel="stylesheet" type="text/css" />
+<link href="jquery-mobile/jquery.mobile.theme-1.0.min.css" rel="stylesheet" type="text/css" />-->
+
+<!--<script>
+	var txt1 = localStorage.getItem('firstname');
+	var txt2 = localStorage.getItem('lastname');
+	$("#name1").html(txt1);
+	$("#name2").html(txt2)
+</script>-->
+
+<script>
+function getValues() {
+	var txt1 = localStorage.getItem('firstname');
+	var txt2 = localStorage.getItem('lastname');
+	
+	//alert(txt1);alert(txt2);
+
+	document.getElementById('name1').innerHTML = txt1;
+	document.getElementById('name2').innerHTML = txt2;
+}	
+</script>
+
+
+
+</head>
+<body onload="getValues()">
+
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td>First Name</td>
+    <td id="name1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Last Name</td>
+    <td id="name2">&nbsp;</td>
+  </tr> 
+</table>
+
+</body>
+</html>
